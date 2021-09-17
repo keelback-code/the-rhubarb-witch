@@ -1,7 +1,12 @@
 <body>
     <button onclick="window.location.reload()">Run Program</button>
     <div id="terminal"></div>
-
+    <style>
+        #terminal {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
     <script>
         var term = new Terminal({
             cols: 80,
