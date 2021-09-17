@@ -2,24 +2,25 @@
 
 import math
 
-def choose_character(user_character):
+def choose_character():
     """
     Ask user to choose character and assign it to user.
     """
-    print("Welcome to The Rhubarb Witch!")
-    print("This is a choose your own adventure game; please choose a character to play with.")
-    print("Be mindful who you pick, it will affect the outcome of your choices!")
-    print("Each time you have to make a decision, I will roll a dice to see whether you succeed or fail")
-    print("So choose carefully! Your options are:\n")
-    print("decision yet to be made about whether all this text is here or from API, or from txt files")
+    #intro = open("intro.txt")
+    #intro_text = intro.read()
+    #intro.close()
+    #print(intro_text)
 
-
-    user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
+    with open("story-files/intro.txt") as intro:
+        intro_text = intro.read()
+        print(intro_text)
     print("1 - Barbarian")
     print("2 - Bard")
     print("3 - Rogue")
     print("4 - Sorcerer")
 
+    user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
+    
     if user_choice == "1":
         user_character = "Barbarian"
     elif user_choice == "2":
@@ -33,10 +34,12 @@ def choose_character(user_character):
 
     return user_character
 
+
 def main():
     """
     Run all program functions.
     """
-    choose_character(user_character)
+    choose_character()
+
 
 main()
