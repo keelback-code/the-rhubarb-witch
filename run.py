@@ -34,7 +34,7 @@ def choose_character():
 
 class Barbarian:
     """
-    Barbarian stats
+    Barbarian class to be used by functions
     """
     #quest = 2
     #penny = -3
@@ -43,16 +43,40 @@ class Barbarian:
         self.path_one = path_one 
         self.path_two = path_two 
 
-def dice_roll(character):
+    def quest_or_penny_stats(self):
+        path_one = 2
+        path_two = -3
+
+    def dangerous_or_tea_stats(self):
+        path_one = 3 #fake
+        path_two = -2 #fake
+
+
+class Rogue:
     """
-    Dice roll
+    Rogue class to be used by functions
     """
-    roll = random.randrange(21)
-    print(roll)
+
+    def __init__(self, path_one, path_two):
+        self.path_one = path_one 
+        self.path_two = path_two 
+    
+
+
+
+def take_path(roll):
+    """
+    Calculate if dice roll has succeeded or failed 
+    and take appropriate path
+    """
+    print("Rolling...")
+    print(f"You have rolled {roll}!")
+
     #if roll >= 11:
         #succeed/user choice
     #else:
         #fail
+
 
 def quest_or_penny(character):
     """
@@ -72,22 +96,38 @@ def quest_or_penny(character):
         print(qp_text)
 
     qp_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-
-    #dice_roll(character)
-
-    qp_barbarian = Barbarian(5, -3)
-
-    roll = random.randrange(21)
+    #"1" = dangerous_or_tea()
+    #"2" = penny()
+    
+    roll = random.randrange(1, 20) # check range
     print(roll)
 
+    #qp_barbarian = Barbarian(5, -3)
+    #character = Barbarian(5, -3)
+    #character = Rogue(-2, 4)
+
     if qp_choice == "1":
-        roll = qp_barbarian.path_one + roll
+        roll = character.quest_or_penny_stats() + roll
         print(roll)
     elif qp_choice == "2":
-        roll = qp_barbarian.path_one + roll
+        roll = character.quest_or_penny_stats() + roll
         print(roll)
 
+    #qp_choice = success
     
+    if roll >= 11:
+        dangerous_or_tea()
+    else:
+        penny()
+
+def dangerous_or_tea():
+
+    print("dangerous or tea goes here")
+
+
+def penny():
+
+    print("penny goes here")
     
 
 
@@ -100,6 +140,7 @@ def main():
     character = choose_character()
     #dice_roll(character)
     quest_or_penny(character)
+    #take_path(roll)
 
 
 main()
