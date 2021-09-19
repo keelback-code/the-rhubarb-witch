@@ -73,8 +73,14 @@ def dice_roll():
     print(roll)
 
     print("Rolling...")
-    print(f"You have rolled {roll}!")
+    return roll
 
+def choose_path():
+    """
+    Function for choosing path and returning value to main()
+    """
+    path_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+    return path_choice
 
 def path_or_bridge(character):
     """
@@ -103,25 +109,25 @@ def path_or_bridge(character):
             pb_text = pb.read()
             print(pb_text)
 
-    pb_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+    #pb_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+    path_choice = choose_path()
+    roll = dice_roll()
+    #roll = random.randrange(1, 20)
 
-    roll = random.randrange(1, 20)
-
-    if pb_choice == "1":
+    if path_choice == "1":
         final_roll = pb_stats.path_one + roll
-    elif pb_choice == "2":
+    elif path_choice == "2":
         final_roll = pb_stats.path_two + roll
 
-    print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and pb_choice == "1":
+    if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Forge ahead.\n")
         quest_or_penny(character)
-    elif final_roll >= 11 and pb_choice == "2":
+    elif final_roll >= 11 and path_choice == "2":
         print("Nice! Head on.\n")
         elf_or_friends(character)
-    elif final_roll <= 10 and pb_choice == "1":
+    elif final_roll <= 10 and path_choice == "1":
         print("You fail. Time to head the other way.\n")
         elf_or_friends(character)
     else:
@@ -137,9 +143,8 @@ def elf_or_friends(character):
         ef_text = ef.read()
         print(ef_text)
 
-    ef_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-
-    roll = random.randrange(1, 20)
+    path_choice = choose_path()
+    roll = dice_roll()
 
     if character == "Barbarian":
         ef_stats = Barbarian(4, -2)
@@ -148,21 +153,21 @@ def elf_or_friends(character):
     else:
         ef_stats = Sorcerer(3, 1)
 
-    if ef_choice == "1":
+    if path_choice == "1":
         final_roll = ef_stats.path_one + roll
-    elif ef_choice == "2":
+    elif path_choice == "2":
         final_roll = ef_stats.path_two + roll
 
     print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and ef_choice == "1":
+    if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Keep going.\n")
         print("success. to elf not built yet")
-    elif final_roll >= 11 and ef_choice == "2":
+    elif final_roll >= 11 and path_choice == "2":
         print("Nice roll! Keep on keepin' on.\n")
         print("success. to friends not built yet")
-    elif final_roll <= 10 and ef_choice == "1":
+    elif final_roll <= 10 and path_choice == "1":
         print("You fail. *sad noises*. You have to take the other choice now.\n")
         print("fail. to friends not built yet")
     else:
@@ -178,9 +183,8 @@ def quest_or_penny(character):
         qp_text = qp.read()
         print(qp_text)
 
-    qp_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-
-    roll = random.randrange(1, 20)
+    path_choice = choose_path()
+    roll = dice_roll()
 
     if character == "Barbarian":
         qp_stats = Barbarian(5, -3)
@@ -220,9 +224,8 @@ def dangerous_or_tea(character):
         dt_text = dt.read()
         print(dt_text)
 
-    dt_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-
-    roll = random.randrange(1, 20)
+    path_choice = choose_path()
+    roll = dice_roll()
 
     if character == "Barbarian":
         dt_stats = Barbarian(3, -1)
@@ -262,9 +265,8 @@ def penny(character):
         penny_text = penny.read()
         print(penny_text)  
 
-        penny_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-
-    roll = random.randrange(1, 20)
+    path_choice = choose_path()
+    roll = dice_roll()
 
     if character == "Barbarian":
         penny_stats = Barbarian(3, -1)
@@ -301,7 +303,9 @@ def main():
     """
     character = choose_character()
     #roll = dice_roll()
+    #path_choice = choose_path()
     path_or_bridge(character)
+    
 
 
 main()
