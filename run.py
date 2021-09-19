@@ -91,7 +91,6 @@ def quest_or_penny(character):
     qp_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
     roll = random.randrange(1, 20) # check range
-    print(roll)
 
     if character == "Barbarian":
         qp_stats = Barbarian(5, -3)
@@ -110,19 +109,19 @@ def quest_or_penny(character):
 
     if final_roll >= 11 and qp_choice == "1":
         print("Your roll succeeds! Forge ahead.")
-        dangerous_or_tea()
+        dangerous_or_tea(character)
     elif final_roll >= 11 and qp_choice == "2":
         print("Nice! Head on.")
-        penny()
+        penny(character)
     elif final_roll <= 10 and qp_choice == "1":
-        print("You fail.")
-        penny()
+        print("You fail. Time to head the other way")
+        penny(character)
     else:
-        print("You failed. Big time.")
-        dangerous_or_tea()
+        print("You failed. Big time. Gonna send you the other way")
+        dangerous_or_tea(character)
 
 
-def dangerous_or_tea():
+def dangerous_or_tea(character):
     """
     Function for path dangerous_or_tea
     """
@@ -134,7 +133,6 @@ def dangerous_or_tea():
     dt_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
     roll = random.randrange(1, 20) # check range
-    print(roll)
 
     if character == "Barbarian":
         dt_stats = Barbarian(3, -1)
@@ -158,14 +156,14 @@ def dangerous_or_tea():
         print("Nice roll! Keep on keepin' on.")
         print("success. to tea not built yet")
     elif final_roll <= 10 and dt_choice == "1":
-        print("You fail. *sad noises*")
+        print("You fail. *sad noises*. You have to take the other choice now.")
         print("fail. to tea not built yet")
     else:
         print("You failed. Better luck next time.")
         print("fail. to yes or no not built yet")
 
 
-def penny():
+def penny(character):
     """
     Function for path variant of dangerous_or_tea where you collect an item for later.
     """
@@ -174,6 +172,38 @@ def penny():
         penny_text = penny.read()
         print(penny_text)  
 
+        penny_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+
+    roll = random.randrange(1, 20) # check range
+
+    if character == "Barbarian":
+        penny_stats = Barbarian(3, -1)
+    elif character == "Rogue":
+        penny_stats = Rogue(3, 1)
+    else:
+        penny_stats = Sorcerer(3, -1)
+    
+    if penny_choice == "1":
+        final_roll = penny_stats.path_one + roll
+    elif penny_choice == "2":
+        final_roll = penny_stats.path_two + roll
+    
+    print("Rolling...")
+    print(f"You have rolled {final_roll}!")
+
+    if final_roll >= 11 and penny_choice == "1":
+        print("Your roll succeeds! Keep going.")
+        print("success. to yes or no not built yet")
+    elif final_roll >= 11 and penny_choice == "2":
+        print("Nice roll! Keep on keepin' on.")
+        print("success. to tea not built yet")
+    elif final_roll <= 10 and penny_choice == "1":
+        print("You fail. *sad noises*")
+        print("fail. to tea not built yet")
+    else:
+        print("You failed. Better luck next time.")
+        print("fail. to yes or no not built yet")
+
 
 def main():
     """
@@ -181,6 +211,7 @@ def main():
     """
     character = choose_character()
     quest_or_penny(character)
+
 
 
 
