@@ -124,12 +124,16 @@ def quest_or_penny(character):
 
 def dangerous_or_tea():
 
-    print("dangerous or tea goes here")
+    with open("./assets/story-files/dangerous-or-tea.txt") as dt:
+        dt_text = dt.read()
+        print(dt_text)
 
 
 def penny():
 
-    print("penny goes here")  
+    with open("./assets/story-files/penny.txt") as penny:
+        penny_text = penny.read()
+        print(penny_text)  
 
 
 def main():
