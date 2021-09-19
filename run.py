@@ -12,20 +12,19 @@ def choose_character():
         print(intro_text)
         
     print("1 - Barbarian")
-    print("2 - Bard")
-    print("3 - Rogue")
-    print("4 - Sorcerer")
+    print("2 - Rogue")
+    print("3 - Sorcerer")
 
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
     
     if user_choice == "1":
         user_character = "Barbarian"
     elif user_choice == "2":
-        user_character = "Bard"
-    elif user_choice == "3":
         user_character = "Rogue"
-    elif user_choice == "4":
+    elif user_choice == "3":
         user_character = "Sorcerer"
+    else:
+        #return error
     
     print(f"You have chosen {user_character}")
 
@@ -43,14 +42,6 @@ class Barbarian:
         self.path_one = path_one 
         self.path_two = path_two 
 
-    def quest_or_penny_stats(self):
-        path_one = 2
-        path_two = -3
-
-    def dangerous_or_tea_stats(self):
-        path_one = 3 #fake
-        path_two = -2 #fake
-
 
 class Rogue:
     """
@@ -60,8 +51,20 @@ class Rogue:
     def __init__(self, path_one, path_two):
         self.path_one = path_one 
         self.path_two = path_two 
-  
 
+    #def quest_or_penny_stats(self):
+    #    path_one = -2 #fake
+    #    path_two = 4 #fake
+
+
+class Sorcerer:
+    """
+    Sorcerer class to be used by functions
+    """
+
+    def __init__(self, path_one, path_two):
+        self.path_one = path_one 
+        self.path_two = path_two 
 
 
 def dice_roll():
@@ -97,28 +100,31 @@ def quest_or_penny(character):
 
     qp_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
-    roll = dice_roll()
-    #qp_barbarian = Barbarian(5, -3)
-    #character = Barbarian(5, -3)
-    #character = Rogue(-2, 4)
+    roll = random.randrange(1, 20) # check range
+    print(roll)
 
-    #roll = character + roll
-    #print(roll)
-
-    #if qp_choice == "1":
-    #    roll = character_stats + roll
-    #    print(roll)
-    #elif qp_choice == "2":
-    #    roll = character_stats + roll
-    #    print(roll)
+    if character == "Barbarian":
+        qp_stats = Barbarian(5, -3)
+    elif character == "Rogue":
+        qp_stats = Rogue(-2, 4)
+    else:
+        qp_stats = Sorcerer(-4, 2)
     
-    if roll >= 11 and qp_choice == "1":
-        print("success head to dangerous or tea")
+    if qp_choice == "1":
+        final_roll = qp_stats.path_one + roll
+    elif qp_choice == "2":
+        final_roll = qp_stats.path_two + roll
+    
+    print("Rolling...")
+    print(f"You have rolled {final_roll}!")
+
+    if final_roll >= 11 and qp_choice == "1":
+        print("Your roll succeeds! Forge ahead. dangerous or tea")
         dangerous_or_tea()
-    elif roll >= 11 and qp_choice == "2":
+    elif final_roll >= 11 and qp_choice == "2":
         print("success head to penny")
         penny()
-    elif roll <= 10 and qp_choice == "1":
+    elif final_roll <= 10 and qp_choice == "1":
         print("fail head to penny")
         penny()
     else:
@@ -140,7 +146,6 @@ def main():
     """
     Run all program functions.
     """
-
     character = choose_character()
     quest_or_penny(character)
 
