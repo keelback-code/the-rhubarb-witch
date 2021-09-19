@@ -109,27 +109,66 @@ def quest_or_penny(character):
     print(f"You have rolled {final_roll}!")
 
     if final_roll >= 11 and qp_choice == "1":
-        print("Your roll succeeds! Forge ahead. dangerous or tea")
+        print("Your roll succeeds! Forge ahead.")
         dangerous_or_tea()
     elif final_roll >= 11 and qp_choice == "2":
-        print("Nice! Head on. success head to penny")
+        print("Nice! Head on.")
         penny()
     elif final_roll <= 10 and qp_choice == "1":
-        print("You fail. fail head to penny")
+        print("You fail.")
         penny()
     else:
-        print("You failed. Big time. head to dangerous or tea")
+        print("You failed. Big time.")
         dangerous_or_tea()
 
 
 def dangerous_or_tea():
+    """
+    Function for path dangerous_or_tea
+    """
 
     with open("./assets/story-files/dangerous-or-tea.txt") as dt:
         dt_text = dt.read()
         print(dt_text)
 
+    dt_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+
+    roll = random.randrange(1, 20) # check range
+    print(roll)
+
+    if character == "Barbarian":
+        dt_stats = Barbarian(3, -1)
+    elif character == "Rogue":
+        dt_stats = Rogue(3, 1)
+    else:
+        dt_stats = Sorcerer(3, -1)
+    
+    if dt_choice == "1":
+        final_roll = dt_stats.path_one + roll
+    elif dt_choice == "2":
+        final_roll = dt_stats.path_two + roll
+    
+    print("Rolling...")
+    print(f"You have rolled {final_roll}!")
+
+    if final_roll >= 11 and dt_choice == "1":
+        print("Your roll succeeds! Keep going.")
+        print("success. to yes or no not built yet")
+    elif final_roll >= 11 and dt_choice == "2":
+        print("Nice roll! Keep on keepin' on.")
+        print("success. to tea not built yet")
+    elif final_roll <= 10 and dt_choice == "1":
+        print("You fail. *sad noises*")
+        print("fail. to tea not built yet")
+    else:
+        print("You failed. Better luck next time.")
+        print("fail. to yes or no not built yet")
+
 
 def penny():
+    """
+    Function for path variant of dangerous_or_tea where you collect an item for later.
+    """
 
     with open("./assets/story-files/penny.txt") as penny:
         penny_text = penny.read()
