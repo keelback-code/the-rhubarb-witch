@@ -79,18 +79,104 @@ def dice_roll():
     print(f"You have rolled {roll}!")
 
 
+def path_or_bridge(character):
+    """
+    Function for path path_or_bridge, including text variants for each character
+    """
+
+    if character == "Barbarian":
+        pb_stats = Barbarian(2, -2)
+        with open("./assets/story-files/path-or-bridge-barbarian.txt") as pb:
+        pb_text = pb.read()
+        print(pb_text)
+    elif character == "Rogue":
+        pb_stats = Rogue(-2, 2)
+        with open("./assets/story-files/path-or-bridge-rogue.txt") as pb:
+        pb_text = pb.read()
+        print(pb_text)
+    else:
+        pb_stats = Sorcerer(2, -2)
+        with open("./assets/story-files/path-or-bridge-sorcerer.txt") as pb:
+        pb_text = pb.read()
+        print(pb_text)
+
+    pb_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+
+    roll = random.randrange(1, 20)
+
+    if pb_choice == "1":
+        final_roll = pb_stats.path_one + roll
+    elif pb_choice == "2":
+        final_roll = pb_stats.path_two + roll
+    
+    print("Rolling...\n")
+    print(f"You have rolled {final_roll}!\n")
+
+    if final_roll >= 11 and pb_choice == "1":
+        print("Your roll succeeds! Forge ahead.\n")
+        quest_or_penny(character)
+    elif final_roll >= 11 and pb_choice == "2":
+        print("Nice! Head on.\n")
+        elf_or_friends(character)
+    elif final_roll <= 10 and pb_choice == "1":
+        print("You fail. Time to head the other way.\n")
+        elf_or_friends(character)
+    else:
+        print("You failed. Big time. Gonna send you the other way.\n")
+        quest_or_penny(character)
+
+def elf_or_friends(character):
+    """
+    Function for path elf_or_friends
+    """
+    with open("./assets/story-files/elf-or-friends.txt") as ef:
+        ef_text = ef.read()
+        print(ef_text)
+
+    ef_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+
+    roll = random.randrange(1, 20) # check range
+
+    if character == "Barbarian":
+        ef_stats = Barbarian(4, -2)
+    elif character == "Rogue":
+        ef_stats = Rogue(2, 1)
+    else:
+        ef_stats = Sorcerer(3, 1)
+    
+    if ef_choice == "1":
+        final_roll = ef_stats.path_one + roll
+    elif ef_choice == "2":
+        final_roll = ef_stats.path_two + roll
+    
+    print("Rolling...\n")
+    print(f"You have rolled {final_roll}!\n")
+
+    if final_roll >= 11 and ef_choice == "1":
+        print("Your roll succeeds! Keep going.\n")
+        print("success. to elf not built yet")
+    elif final_roll >= 11 and ef_choice == "2":
+        print("Nice roll! Keep on keepin' on.\n")
+        print("success. to friends not built yet")
+    elif final_roll <= 10 and ef_choice == "1":
+        print("You fail. *sad noises*. You have to take the other choice now.\n")
+        print("fail. to friends not built yet")
+    else:
+        print("You failed. Better luck next time.\n")
+        print("fail. to elf not built yet")
+
+        
 def quest_or_penny(character):
     """
     Function for path quest_or_penny
     """
-   
     with open("./assets/story-files/quest-or-penny.txt") as qp:
         qp_text = qp.read()
         print(qp_text)
 
     qp_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
-    roll = random.randrange(1, 20) # check range
+    roll = random.randrange(1, 20)
 
     if character == "Barbarian":
         qp_stats = Barbarian(5, -3)
@@ -104,20 +190,20 @@ def quest_or_penny(character):
     elif qp_choice == "2":
         final_roll = qp_stats.path_two + roll
     
-    print("Rolling...")
-    print(f"You have rolled {final_roll}!")
+    print("Rolling...\n")
+    print(f"You have rolled {final_roll}!\n")
 
     if final_roll >= 11 and qp_choice == "1":
-        print("Your roll succeeds! Forge ahead.")
+        print("Your roll succeeds! Forge ahead.\n")
         dangerous_or_tea(character)
     elif final_roll >= 11 and qp_choice == "2":
-        print("Nice! Head on.")
+        print("Nice! Head on.\n")
         penny(character)
     elif final_roll <= 10 and qp_choice == "1":
-        print("You fail. Time to head the other way")
+        print("You fail. Time to head the other way.\n")
         penny(character)
     else:
-        print("You failed. Big time. Gonna send you the other way")
+        print("You failed. Big time. Gonna send you the other way.\n")
         dangerous_or_tea(character)
 
 
@@ -146,20 +232,20 @@ def dangerous_or_tea(character):
     elif dt_choice == "2":
         final_roll = dt_stats.path_two + roll
     
-    print("Rolling...")
-    print(f"You have rolled {final_roll}!")
+    print("Rolling...\n")
+    print(f"You have rolled {final_roll}!\n")
 
     if final_roll >= 11 and dt_choice == "1":
-        print("Your roll succeeds! Keep going.")
+        print("Your roll succeeds! Keep going.\n")
         print("success. to yes or no not built yet")
     elif final_roll >= 11 and dt_choice == "2":
-        print("Nice roll! Keep on keepin' on.")
+        print("Nice roll! Keep on keepin' on.\n")
         print("success. to tea not built yet")
     elif final_roll <= 10 and dt_choice == "1":
-        print("You fail. *sad noises*. You have to take the other choice now.")
+        print("You fail. *sad noises*. You have to take the other choice now.\n")
         print("fail. to tea not built yet")
     else:
-        print("You failed. Better luck next time.")
+        print("You failed. Better luck next time.\n")
         print("fail. to yes or no not built yet")
 
 
@@ -188,20 +274,20 @@ def penny(character):
     elif penny_choice == "2":
         final_roll = penny_stats.path_two + roll
     
-    print("Rolling...")
-    print(f"You have rolled {final_roll}!")
+    print("Rolling...\n")
+    print(f"You have rolled {final_roll}!\n")
 
     if final_roll >= 11 and penny_choice == "1":
-        print("Your roll succeeds! Keep going.")
+        print("Your roll succeeds! Keep going.\n")
         print("success. to yes or no not built yet")
     elif final_roll >= 11 and penny_choice == "2":
-        print("Nice roll! Keep on keepin' on.")
+        print("Nice roll! Keep on keepin' on.\n")
         print("success. to tea not built yet")
     elif final_roll <= 10 and penny_choice == "1":
-        print("You fail. *sad noises*")
+        print("You fail. *sad noises*\n")
         print("fail. to tea not built yet")
     else:
-        print("You failed. Better luck next time.")
+        print("You failed. Better luck next time.\n")
         print("fail. to yes or no not built yet")
 
 
@@ -210,7 +296,7 @@ def main():
     Run all program functions.
     """
     character = choose_character()
-    quest_or_penny(character)
+    path_or_bridge(character)
 
 
 
