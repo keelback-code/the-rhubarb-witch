@@ -81,6 +81,12 @@ def path_or_bridge(character):
     Function for path path_or_bridge, including text variants for each character
     """
 
+    #variables needed for possible other functions are
+    #character
+    #stats
+    #user choice
+    #path?
+
     if character == "Barbarian":
         pb_stats = Barbarian(2, -2)
         with open("./assets/story-files/path-or-bridge-barbarian.txt") as pb:
@@ -258,7 +264,7 @@ def penny(character):
 
         penny_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
-    roll = random.randrange(1, 20) # check range
+    roll = random.randrange(1, 20)
 
     if character == "Barbarian":
         penny_stats = Barbarian(3, -1)
@@ -294,6 +300,7 @@ def main():
     Run all program functions.
     """
     character = choose_character()
+    #roll = dice_roll()
     path_or_bridge(character)
 
 
