@@ -60,22 +60,20 @@ class Rogue:
     def __init__(self, path_one, path_two):
         self.path_one = path_one 
         self.path_two = path_two 
-    
+  
 
 
 
-def take_path(roll):
+def dice_roll():
     """
-    Calculate if dice roll has succeeded or failed 
-    and take appropriate path
+    Dice roll and text to be used in other functions.
     """
+
+    roll = random.randrange(1, 20) # check range
+    print(roll)
+
     print("Rolling...")
     print(f"You have rolled {roll}!")
-
-    #if roll >= 11:
-        #succeed/user choice
-    #else:
-        #fail
 
 
 def quest_or_penny(character):
@@ -83,42 +81,50 @@ def quest_or_penny(character):
     Function for path quest_or_penny
     """
 
-    # read txt
-    # offer choice
-    # roll
-    # succeed or fail
+    # read txt done
+    # offer choice done
+    # roll done
+    # succeed or fail done
     # add or subtract user character stats
     # get final number
-    # take path
+    # take path done
+
+    print(f"You choose {character}")
     
     with open("./assets/story-files/quest-or-penny.txt") as qp:
         qp_text = qp.read()
         print(qp_text)
 
     qp_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-    #"1" = dangerous_or_tea()
-    #"2" = penny()
-    
-    roll = random.randrange(1, 20) # check range
-    print(roll)
 
+    roll = dice_roll()
     #qp_barbarian = Barbarian(5, -3)
     #character = Barbarian(5, -3)
     #character = Rogue(-2, 4)
 
-    if qp_choice == "1":
-        roll = character.quest_or_penny_stats() + roll
-        print(roll)
-    elif qp_choice == "2":
-        roll = character.quest_or_penny_stats() + roll
-        print(roll)
+    #roll = character + roll
+    #print(roll)
 
-    #qp_choice = success
+    #if qp_choice == "1":
+    #    roll = character_stats + roll
+    #    print(roll)
+    #elif qp_choice == "2":
+    #    roll = character_stats + roll
+    #    print(roll)
     
-    if roll >= 11:
+    if roll >= 11 and qp_choice == "1":
+        print("success head to dangerous or tea")
         dangerous_or_tea()
-    else:
+    elif roll >= 11 and qp_choice == "2":
+        print("success head to penny")
         penny()
+    elif roll <= 10 and qp_choice == "1":
+        print("fail head to penny")
+        penny()
+    else:
+        print("fail head to dangerous or tea")
+        dangerous_or_tea()
+
 
 def dangerous_or_tea():
 
@@ -127,20 +133,17 @@ def dangerous_or_tea():
 
 def penny():
 
-    print("penny goes here")
-    
+    print("penny goes here")  
 
 
 def main():
     """
     Run all program functions.
     """
-    
-   
+
     character = choose_character()
-    #dice_roll(character)
     quest_or_penny(character)
-    #take_path(roll)
+
 
 
 main()
