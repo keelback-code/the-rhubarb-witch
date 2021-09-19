@@ -10,13 +10,13 @@ def choose_character():
     with open("./assets/story-files/intro.txt") as intro:
         intro_text = intro.read()
         print(intro_text)
-        
+ 
     print("1 - Barbarian")
     print("2 - Rogue")
     print("3 - Sorcerer")
 
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
-    
+
     if user_choice == "1":
         user_character = "Barbarian"
     elif user_choice == "2":
@@ -25,7 +25,7 @@ def choose_character():
         user_character = "Sorcerer"
     else:
         print("Error")
-    
+
     print(f"You have chosen {user_character}")
 
     return user_character
@@ -35,9 +35,6 @@ class Barbarian:
     """
     Barbarian class to be used by functions
     """
-    #quest = 2
-    #penny = -3
-
     def __init__(self, path_one, path_two):
         self.path_one = path_one 
         self.path_two = path_two 
@@ -87,18 +84,18 @@ def path_or_bridge(character):
     if character == "Barbarian":
         pb_stats = Barbarian(2, -2)
         with open("./assets/story-files/path-or-bridge-barbarian.txt") as pb:
-        pb_text = pb.read()
-        print(pb_text)
+            pb_text = pb.read()
+            print(pb_text)
     elif character == "Rogue":
         pb_stats = Rogue(-2, 2)
         with open("./assets/story-files/path-or-bridge-rogue.txt") as pb:
-        pb_text = pb.read()
-        print(pb_text)
+            pb_text = pb.read()
+            print(pb_text)
     else:
         pb_stats = Sorcerer(2, -2)
         with open("./assets/story-files/path-or-bridge-sorcerer.txt") as pb:
-        pb_text = pb.read()
-        print(pb_text)
+            pb_text = pb.read()
+            print(pb_text)
 
     pb_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
@@ -108,7 +105,7 @@ def path_or_bridge(character):
         final_roll = pb_stats.path_one + roll
     elif pb_choice == "2":
         final_roll = pb_stats.path_two + roll
-    
+
     print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
@@ -125,6 +122,7 @@ def path_or_bridge(character):
         print("You failed. Big time. Gonna send you the other way.\n")
         quest_or_penny(character)
 
+
 def elf_or_friends(character):
     """
     Function for path elf_or_friends
@@ -135,7 +133,7 @@ def elf_or_friends(character):
 
     ef_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
-    roll = random.randrange(1, 20) # check range
+    roll = random.randrange(1, 20)
 
     if character == "Barbarian":
         ef_stats = Barbarian(4, -2)
@@ -143,12 +141,12 @@ def elf_or_friends(character):
         ef_stats = Rogue(2, 1)
     else:
         ef_stats = Sorcerer(3, 1)
-    
+
     if ef_choice == "1":
         final_roll = ef_stats.path_one + roll
     elif ef_choice == "2":
         final_roll = ef_stats.path_two + roll
-    
+
     print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
@@ -165,7 +163,7 @@ def elf_or_friends(character):
         print("You failed. Better luck next time.\n")
         print("fail. to elf not built yet")
 
-        
+
 def quest_or_penny(character):
     """
     Function for path quest_or_penny
@@ -184,12 +182,12 @@ def quest_or_penny(character):
         qp_stats = Rogue(-2, 4)
     else:
         qp_stats = Sorcerer(-4, 2)
-    
+
     if qp_choice == "1":
         final_roll = qp_stats.path_one + roll
     elif qp_choice == "2":
         final_roll = qp_stats.path_two + roll
-    
+
     print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
@@ -218,7 +216,7 @@ def dangerous_or_tea(character):
 
     dt_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
 
-    roll = random.randrange(1, 20) # check range
+    roll = random.randrange(1, 20)
 
     if character == "Barbarian":
         dt_stats = Barbarian(3, -1)
@@ -226,12 +224,12 @@ def dangerous_or_tea(character):
         dt_stats = Rogue(3, 1)
     else:
         dt_stats = Sorcerer(3, -1)
-    
+
     if dt_choice == "1":
         final_roll = dt_stats.path_one + roll
     elif dt_choice == "2":
         final_roll = dt_stats.path_two + roll
-    
+
     print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
@@ -268,12 +266,12 @@ def penny(character):
         penny_stats = Rogue(3, 1)
     else:
         penny_stats = Sorcerer(3, -1)
-    
+
     if penny_choice == "1":
         final_roll = penny_stats.path_one + roll
     elif penny_choice == "2":
         final_roll = penny_stats.path_two + roll
-    
+
     print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
@@ -297,8 +295,6 @@ def main():
     """
     character = choose_character()
     path_or_bridge(character)
-
-
 
 
 main()

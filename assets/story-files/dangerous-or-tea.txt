@@ -1,4 +1,6 @@
 The door creaks open, revealing a tall woman with short rhubarb hair and a striking suit that seemed to be made of grass. 
 The witch says: 'I might have some quests available, what sort of quest are you looking for?' You say:
+
 1. 'Something really dangerous.'
+
 2. 'I promised I'd be home for tea'

@@ -2,5 +2,7 @@ You arrive at the witch's cottage and politely knock on the door.
 A rectangular piece of metal slides to the left, 
 revealing a park of dark purple eyes. From inside someone bellows 
 'What do you want?' You answer:
+
 1. 'Uhhhhh... we were looking for a quest? Do you do those here?'
+
 2. 'Would you spare a penny to help mend the inn roof?'
