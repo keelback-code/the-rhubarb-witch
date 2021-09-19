@@ -1,29 +1,35 @@
-Readme
-Purpose
-User Stories
-Design and UX
-Wireframes
-Colour schemes and typography
-Accessibility
-Features
-Technologies
-Testing
-Code Validation
-Browser Compatibility
-Performance Testing
-Manual Testing
-User Stories Testing
-Debugging and known bugs
-Deployment
-Credits
-Acknowledgements
+### Table of contents:
 
-Purpose
+[Purpose](#purpose)
+
+[User Stories](#user-stories) 
+
+[Design and UX](#design-and-ux) 
+* [Story maps](#story-maps)
+* [Colour schemes and typography](#colour-schemes-and-typography)
+
+[Features](#features)
+
+[Technologies](#technologies)
+
+[Testing ](#testing)
+* [Code Validation](#code-validation)
+* [Browser Compatibility](#browser-compatibility)
+* [Performance Testing](#performance-testing)
+* [Manual Testing](#manual-testing)
+* [User Stories Testing](#user-stories-testing)
+
+[Debugging and known bugs](#debugging-and-known-bugs)
+
+[Deployment](#deployment)
+
+[Credits](#credits)
+
+### Purpose
 
 The Rhubarb Witch is a text-based choose your own adventure game with mechanics taken from Dungeons and Dragons. At the beginning you choose a character class: Barbarian, Bard, Rogue or Sorcerer. At each fork in the path you will roll a ‘dice’ which will determine whether you succeed or fail in taking that action. The class you chose affects the outcome of the roll, which will be further explained in the Design section of the Readme.
 
-
-User Stories
+### User Stories
 
 A first time user looking to play the game:
 I want to be able to choose a character
@@ -43,7 +49,7 @@ I want the game to be engaging
 I want what is going on to be clear to the users at all times
 I want to provide the same experience for all users - need to know more
 
-Design and UX
+### Design and UX
 
 Inspiration from shows such as Dimenson 20 (link) and Polygon’s TTRPG videos (link to cyperpunk red?)
 
@@ -51,21 +57,22 @@ In D&D, almost every action is accompanied by a roll of a dice, usually one with
 
 Text is kept relatively short so as to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice; I have noticed from my own play throughs of choose your own adventure games that there is a tendency to skip to the end if I see a block of text, which I wanted to avoid here.
 
-Wireframes
-Colour schemes and typography
+### Story maps
+
+### Colour schemes and typography
 
 
 The site background invokes a deep dark forest, as most of the action takes place outside. It is neutral so as not to detract from the game.
 
-Accessibility
+### Accessibility
 Semantic HTML and aria labels were implemented across the site (only keep this section if you have more to say, otherwise this is covered in testing section)(does this apply to heroku app??)
 
-Features - all pages, per page
+### Features - all pages, per page
 
 
 Rolling - a countdown/number of lines between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. 
 
-Technologies
+### Technologies
 Languages used:
 HTML5 ?
 CSS ?
@@ -80,26 +87,22 @@ GitPages - for the deployment of the site
 Gitpod - for editing the files
 Heroku?
 
-Testing 
+### Testing 
 
 
 
-Debugging and known bugs
+### Debugging and known bugs
 tbc
-Deployment
-Publishing
-The project was deployed using GitHub pages. The steps to deploy using GitHub pages are:
-In the repository, click the 'Settings' tab, which is the furthest to the right
-Scroll down until you see the 'Pages' tab, which will be in the menu on the left hand side
-Underneath the 'Source' heading, open the drop down and choose the 'master' branch to build from
-Click 'Save' and the site link will appear in a blue box. After a few moments the box will turn green and then the site will be live.
+### Deployment
+### Publishing
+The project was deployed using Heroku
 The live link is: 
-Forking and Cloning
+### Forking and Cloning
 To save a copy of the code and work on it yourself, here are the steps for forking and cloning using Github:
 In the repository, click the 'Fork' button, which is on the top right hand side, next to 'Star'.
 Github will automatically create a new repo, which is forked from the original. If you would like to clone it you have two options:
 Within the repository, click the 'Code' dropdown, which is located next to 'Add File' on the right (underneath the Settings tab); there is an option to download all files and save a copy locally.
 In the same 'Code' dropdown, you can opt to open the code with GitHub Desktop and work from there.
 
-Credits (content and media)
+### Credits (content and media)
 Character class information - research done on dungeons and dragons fandom .com (link) and d&d beyond (link)
