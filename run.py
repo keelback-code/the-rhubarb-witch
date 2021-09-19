@@ -24,7 +24,7 @@ def choose_character():
     elif user_choice == "3":
         user_character = "Sorcerer"
     else:
-        #return error
+        print("Error")
     
     print(f"You have chosen {user_character}")
 
@@ -83,17 +83,7 @@ def quest_or_penny(character):
     """
     Function for path quest_or_penny
     """
-
-    # read txt done
-    # offer choice done
-    # roll done
-    # succeed or fail done
-    # add or subtract user character stats
-    # get final number
-    # take path done
-
-    print(f"You choose {character}")
-    
+   
     with open("./assets/story-files/quest-or-penny.txt") as qp:
         qp_text = qp.read()
         print(qp_text)
@@ -122,13 +112,13 @@ def quest_or_penny(character):
         print("Your roll succeeds! Forge ahead. dangerous or tea")
         dangerous_or_tea()
     elif final_roll >= 11 and qp_choice == "2":
-        print("success head to penny")
+        print("Nice! Head on. success head to penny")
         penny()
     elif final_roll <= 10 and qp_choice == "1":
-        print("fail head to penny")
+        print("You fail. fail head to penny")
         penny()
     else:
-        print("fail head to dangerous or tea")
+        print("You failed. Big time. head to dangerous or tea")
         dangerous_or_tea()
 
 
