@@ -24,7 +24,7 @@ def choose_character():
     elif user_choice == "3":
         user_character = "Sorcerer"
     else:
-        print("Error")
+        print("Error") # refine this
 
     print(f"You have chosen {user_character}")
 
@@ -182,6 +182,17 @@ def elf_or_friends(character):
     print(f"You have rolled {final_roll}!\n")
     
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+def elf():
+    """
+    Function for path elf, which resets game.
+    """
+    with open("./assets/story-files/quest-or-penny.txt") as el:
+        el_text = el.read()
+        print(el_text)
+    
+    print("Returning to beginning of game.../n")
+    choose_character()
 
 
 def quest_or_penny(character):
