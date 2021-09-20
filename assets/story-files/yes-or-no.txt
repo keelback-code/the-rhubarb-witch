@@ -1,0 +1,7 @@
+'Something dangerous? Okay, I need a dark talisman 
+rescued from the Bog of Eternal Nightmares, 
+does that sound up your alley?' You say:
+
+1. 'Heck yes'
+
+2. 'Heck no'

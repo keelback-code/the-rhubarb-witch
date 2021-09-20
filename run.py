@@ -98,19 +98,15 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
 
     if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Forge ahead.\n")
-        print("success path 1 reached")
         first_path_initiate(character)
     elif final_roll >= 11 and path_choice == "2":
-        print("Nice! Head on.\n")
-        print("success path 2 reached")
+        print("Nice! Head onwards.\n")
         second_path_initiate(character)
     elif final_roll <= 10 and path_choice == "1":
         print("You fail. Time to head the other way.\n")
-        print("fail path 1 reached")
         second_path_initiate(character)
     else:
         print("You failed. Big time. Gonna send you the other way.\n")
-        print("fail path 2 reached")
         first_path_initiate(character)
 
 
@@ -123,7 +119,7 @@ def path_or_bridge(character):
     #character done
     #stats
     #user choice done
-    #path done?
+    #path done
 
     if character == "Barbarian":
         pb_stats = Barbarian(2, -2)

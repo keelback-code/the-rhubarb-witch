@@ -1,0 +1,9 @@
+'I like your enthusiasm', the witch remarks. 
+'The Bog is north of here and the talisman is shaped like a cat. 
+That's all I know but I promise a hefty reward on your return.' 
+You and your companions leave the cottage. 
+Would you like to:
+
+1. Head north immediately; don't waste a second.
+
+2. Isn't it nighttime? You should rest before heading off.
