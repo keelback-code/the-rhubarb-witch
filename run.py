@@ -7,9 +7,7 @@ def choose_character():
     Introduce the game, ask user to choose character and assign it to user.
     """
 
-    with open("./assets/story-files/intro.txt") as intro:
-        intro_text = intro.read()
-        print(intro_text)
+    read_file("./assets/story-files/intro.txt")
  
     print("1 - Barbarian")
     print("2 - Rogue")
@@ -68,6 +66,17 @@ class Sorcerer:
         path_two = 4 #fake
 
 
+def read_file(current_story_file):
+    """
+    Function to open, read, print and close all 
+    story files to feed into other functions.
+    """
+
+    with open(current_story_file) as file:
+        file_text = file.read()
+        print(file_text)
+
+
 def choose_path():
     """
     Function for choosing path and returning value to main()
@@ -122,20 +131,14 @@ def path_or_bridge(character):
     #path done
 
     if character == "Barbarian":
-        pb_stats = Barbarian(2, -2)
-        with open("./assets/story-files/path-or-bridge-barbarian.txt") as pb:
-            pb_text = pb.read()
-            print(pb_text)
+        stats = Barbarian(2, -2)
+        read_file("./assets/story-files/path-or-bridge-barbarian.txt")
     elif character == "Rogue":
-        pb_stats = Rogue(-2, 2)
-        with open("./assets/story-files/path-or-bridge-rogue.txt") as pb:
-            pb_text = pb.read()
-            print(pb_text)
+        stats = Rogue(-2, 2)
+        read_file("./assets/story-files/path-or-bridge-rogue.txt")
     else:
-        pb_stats = Sorcerer(2, -2)
-        with open("./assets/story-files/path-or-bridge-sorcerer.txt") as pb:
-            pb_text = pb.read()
-            print(pb_text)
+        stats = Sorcerer(2, -2)
+        read_file("./assets/story-files/path-or-bridge-sorcerer.txt")
 
     path_choice = choose_path()
     roll = dice_roll()
@@ -144,9 +147,9 @@ def path_or_bridge(character):
     second_path_initiate = elf_or_friends
 
     if path_choice == "1":
-        final_roll = pb_stats.path_one + roll
+        final_roll = stats.path_one + roll
     elif path_choice == "2":
-        final_roll = pb_stats.path_two + roll
+        final_roll = stats.path_two + roll
 
     print(f"You have rolled {final_roll}!\n")
 
@@ -157,10 +160,7 @@ def elf_or_friends(character):
     """
     Function for path elf_or_friends
     """
-    with open("./assets/story-files/elf-or-friends.txt") as ef:
-        ef_text = ef.read()
-        print(ef_text)
-
+    read_file("./assets/story-files/elf-or-friends.txt")
     path_choice = choose_path()
     roll = dice_roll()
 
@@ -168,11 +168,11 @@ def elf_or_friends(character):
     second_path_initiate = friends 
 
     if character == "Barbarian":
-        stats = Barbarian(4, -2)
+        stats = Barbarian(-1, 2)
     elif character == "Rogue":
-        stats = Rogue(2, 1)
+        stats = Rogue(-2, 2)
     else:
-        stats = Sorcerer(3, 1)
+        stats = Sorcerer(-3, 2)
     
     if path_choice == "1":
         final_roll = stats.path_one + roll
@@ -183,16 +183,14 @@ def elf_or_friends(character):
     
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
+
 def elf(character):
     """
     Function for path elf, which resets game.
     """
-    with open("./assets/story-files/elf.txt") as el:
-        el_text = el.read()
-        print(el_text)
-    
+    read_file("./assets/story-files/elf.txt")
     print("Returning to beginning of game...\n")
-    choose_character()
+    main()
 
 
 def friends(character):
@@ -200,10 +198,7 @@ def friends(character):
     Function for path friend, which goes straight to quest-or-penny
     without rolling.
     """
-    with open("./assets/story-files/friends.txt") as fr:
-        fr_text = fr.read()
-        print(fr_text)
-    
+    read_file("./assets/story-files/friends.txt")
     quest_or_penny(character)
 
 
@@ -211,10 +206,7 @@ def quest_or_penny(character):
     """
     Function for path quest_or_penny
     """
-    with open("./assets/story-files/quest-or-penny.txt") as qp:
-        qp_text = qp.read()
-        print(qp_text)
-
+    read_file("./assets/story-files/quest-or-penny.txt")
     path_choice = choose_path()
     roll = dice_roll()
 
@@ -222,16 +214,16 @@ def quest_or_penny(character):
     second_path_initiate = penny
 
     if character == "Barbarian":
-        qp_stats = Barbarian(5, -3)
+        stats = Barbarian(5, -3)
     elif character == "Rogue":
-        qp_stats = Rogue(-2, 4)
+        stats = Rogue(-2, 4)
     else:
-        qp_stats = Sorcerer(-4, 2)
+        stats = Sorcerer(-4, 2)
 
     if path_choice == "1":
-        final_roll = qp_stats.path_one + roll
+        final_roll = stats.path_one + roll
     elif path_choice == "2":
-        final_roll = qp_stats.path_two + roll
+        final_roll = stats.path_two + roll
 
     print(f"You have rolled {final_roll}!\n")
 
@@ -243,10 +235,7 @@ def dangerous_or_tea(character):
     Function for path dangerous_or_tea
     """
 
-    with open("./assets/story-files/dangerous-or-tea.txt") as dt:
-        dt_text = dt.read()
-        print(dt_text)
-
+    read_file("./assets/story-files/dangerous-or-tea.txt")
     path_choice = choose_path()
     roll = dice_roll()
 
@@ -254,16 +243,16 @@ def dangerous_or_tea(character):
     second_path_initiate = tea
 
     if character == "Barbarian":
-        dt_stats = Barbarian(3, -1)
+        stats = Barbarian(3, -1)
     elif character == "Rogue":
-        dt_stats = Rogue(3, 1)
+        stats = Rogue(3, 1)
     else:
-        dt_stats = Sorcerer(3, -1)
+        stats = Sorcerer(3, -1)
 
     if path_choice == "1":
-        final_roll = dt_stats.path_one + roll
+        final_roll = stats.path_one + roll
     elif path_choice == "2":
-        final_roll = dt_stats.path_two + roll
+        final_roll = stats.path_two + roll
 
     print(f"You have rolled {final_roll}!\n")
     
@@ -275,10 +264,7 @@ def penny(character):
     Function for path variant of dangerous_or_tea where you collect an item for later.
     """
 
-    with open("./assets/story-files/penny.txt") as penny:
-        penny_text = penny.read()
-        print(penny_text)  
-
+    read_file("./assets/story-files/penny.txt")
     path_choice = choose_path()
     roll = dice_roll()
 
@@ -307,27 +293,24 @@ def yes_or_no(character):
     Function for path yes or no.
     """
 
-    with open("./assets/story-files/yes-or-no.txt") as yn:
-        yn_text = yn.read()
-        print(yn_text)  
-
+    read_file("./assets/story-files/yes-or-no.txt")
     path_choice = choose_path()
     roll = dice_roll()
 
-    first_path_initiate = north_or_rest #not built yet
+    first_path_initiate = north_or_rest
     second_path_initiate = tea
 
     if character == "Barbarian":
-        yn_stats = Barbarian(2, -3)
+        stats = Barbarian(2, -3)
     elif character == "Rogue":
-        yn_stats = Rogue(2, -2)
+        stats = Rogue(2, -2)
     else:
-        yn_stats = Sorcerer(1, -1)
+        stats = Sorcerer(1, -1)
 
     if path_choice == "1":
-        final_roll = yn_stats.path_one + roll
+        final_roll = stats.path_one + roll
     elif path_choice == "2":
-        final_roll = yn_stats.path_two + roll
+        final_roll = stats.path_two + roll
 
     print(f"You have rolled {final_roll}!\n")
 
@@ -339,13 +322,41 @@ def tea(character):
     Function for path tea, which resets game.
     """
 
-    with open("./assets/story-files/tea.txt") as t:
-        t_text = t.read()
-        print(t_text)
-    
+    read_file("./assets/story-files/tea.txt")
     print("Returning to beginning of game...\n")
-    choose_character()
+    main()
 
+
+def north_or_rest(character):
+    """
+    Function for north or rest.
+    """
+    #with open("./assets/story-files/north-or-rest.txt") as nr:
+    #    nr_text = nr.read()
+    #    print(nr_text)  
+
+    read_file("./assets/story-files/north-or-rest.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+
+    first_path_initiate = north_or_rest
+    second_path_initiate = tea
+
+    if character == "Barbarian":
+        stats = Barbarian(2, -3)
+    elif character == "Rogue":
+        stats = Rogue(2, -2)
+    else:
+        stats = Sorcerer(1, -1)
+
+    if path_choice == "1":
+        final_roll = stats.path_one + roll
+    elif path_choice == "2":
+        final_roll = stats.path_two + roll
+
+    print(f"You have rolled {final_roll}!\n")
+
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 def main():
     """
