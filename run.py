@@ -68,6 +68,16 @@ class Sorcerer:
         path_two = 4 #fake
 
 
+def choose_path():
+    """
+    Function for choosing path and returning value to main()
+    """
+    path_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+    return path_choice
+
+    #also catch input errors?
+
+
 def dice_roll():
     """
     Dice roll and text to be used in other functions.
@@ -80,12 +90,28 @@ def dice_roll():
     return roll
 
 
-def choose_path():
+def path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate):
     """
-    Function for choosing path and returning value to main()
+    Function for determining which path will be taken
+    after dice rolls, to be fed back into main path functions.
     """
-    path_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-    return path_choice
+
+    if final_roll >= 11 and path_choice == "1":
+        print("Your roll succeeds! Forge ahead.\n")
+        print("success path 1 reached")
+        first_path_initiate(character)
+    elif final_roll >= 11 and path_choice == "2":
+        print("Nice! Head on.\n")
+        print("success path 2 reached")
+        second_path_initiate(character)
+    elif final_roll <= 10 and path_choice == "1":
+        print("You fail. Time to head the other way.\n")
+        print("fail path 1 reached")
+        second_path_initiate(character)
+    else:
+        print("You failed. Big time. Gonna send you the other way.\n")
+        print("fail path 2 reached")
+        first_path_initiate(character)
 
 
 def path_or_bridge(character):
@@ -130,42 +156,6 @@ def path_or_bridge(character):
 
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
-    #if final_roll >= 11 and path_choice == "1":
-    #    print("Your roll succeeds! Forge ahead.\n")
-    #    quest_or_penny(character)
-    #elif final_roll >= 11 and path_choice == "2":
-    #    print("Nice! Head on.\n")
-    #    elf_or_friends(character)
-    #elif final_roll <= 10 and path_choice == "1":
-    #    print("You fail. Time to head the other way.\n")
-    #    elf_or_friends(character)
-    #else:
-    #    print("You failed. Big time. Gonna send you the other way.\n")
-    #    quest_or_penny(character)
-
-def path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate):
-    """
-    Function for determining which path will be taken, 
-    to be fed back into main path functions.
-    """
-
-    if final_roll >= 11 and path_choice == "1":
-        print("Your roll succeeds! Forge ahead.\n")
-        print("success path 1 reached")
-        first_path_initiate(character)
-    elif final_roll >= 11 and path_choice == "2":
-        print("Nice! Head on.\n")
-        print("success path 2 reached")
-        second_path_initiate(character)
-    elif final_roll <= 10 and path_choice == "1":
-        print("You fail. Time to head the other way.\n")
-        print("fail path 1 reached")
-        second_path_initiate(character)
-    else:
-        print("You failed. Big time. Gonna send you the other way.\n")
-        print("fail path 2 reached")
-        first_path_initiate(character)
-
 
 def elf_or_friends(character):
     """
@@ -177,6 +167,9 @@ def elf_or_friends(character):
 
     path_choice = choose_path()
     roll = dice_roll()
+
+    first_path_initiate = elf # not built yet
+    second_path_initiate = friends # not built yet
 
     if character == "Barbarian":
         stats = Barbarian(4, -2)
@@ -191,22 +184,8 @@ def elf_or_friends(character):
         final_roll = stats.path_two + roll
 
     print(f"You have rolled {final_roll}!\n")
-
-    if final_roll >= 11 and path_choice == "1":
-        print("Your roll succeeds! Keep going.\n")
-        print("success. to elf not built yet")
-    elif final_roll >= 11 and path_choice == "2":
-        print("Nice roll! Keep on keepin' on.\n")
-        print("success. to friends not built yet")
-    elif final_roll <= 10 and path_choice == "1":
-        print("You fail. *sad noises*. You have to take the other choice now.\n")
-        print("fail. to friends not built yet")
-    else:
-        print("You failed. Better luck next time.\n")
-        print("fail. to elf not built yet")
-
-
-
+    
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
 def quest_or_penny(character):
@@ -219,6 +198,9 @@ def quest_or_penny(character):
 
     path_choice = choose_path()
     roll = dice_roll()
+
+    first_path_initiate = dangerous_or_tea
+    second_path_initiate = penny
 
     if character == "Barbarian":
         qp_stats = Barbarian(5, -3)
@@ -234,18 +216,7 @@ def quest_or_penny(character):
 
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and path_choice == "1":
-        print("Your roll succeeds! Forge ahead.\n")
-        dangerous_or_tea(character)
-    elif final_roll >= 11 and path_choice == "2":
-        print("Nice! Head on.\n")
-        penny(character)
-    elif final_roll <= 10 and path_choice == "1":
-        print("You fail. Time to head the other way.\n")
-        penny(character)
-    else:
-        print("You failed. Big time. Gonna send you the other way.\n")
-        dangerous_or_tea(character)
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
 def dangerous_or_tea(character):
@@ -260,6 +231,9 @@ def dangerous_or_tea(character):
     path_choice = choose_path()
     roll = dice_roll()
 
+    first_path_initiate = yes_or_no
+    second_path_initiate = tea
+
     if character == "Barbarian":
         dt_stats = Barbarian(3, -1)
     elif character == "Rogue":
@@ -273,19 +247,8 @@ def dangerous_or_tea(character):
         final_roll = dt_stats.path_two + roll
 
     print(f"You have rolled {final_roll}!\n")
-
-    if final_roll >= 11 and path_choice == "1":
-        print("Your roll succeeds! Keep going.\n")
-        print("success. to yes or no not built yet")
-    elif final_roll >= 11 and path_choice == "2":
-        print("Nice roll! Keep on keepin' on.\n")
-        print("success. to tea not built yet")
-    elif final_roll <= 10 and path_choice == "1":
-        print("You fail. *sad noises*. You have to take the other choice now.\n")
-        print("fail. to tea not built yet")
-    else:
-        print("You failed. Better luck next time.\n")
-        print("fail. to yes or no not built yet")
+    
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
 def penny(character):
@@ -299,6 +262,9 @@ def penny(character):
 
     path_choice = choose_path()
     roll = dice_roll()
+
+    first_path_initiate = yes_or_no
+    second_path_initiate = tea
 
     if character == "Barbarian":
         penny_stats = Barbarian(3, -1)
@@ -314,18 +280,7 @@ def penny(character):
 
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and path_choice == "1":
-        print("Your roll succeeds! Keep going.\n")
-        print("success. to yes or no not built yet")
-    elif final_roll >= 11 and path_choice == "2":
-        print("Nice roll! Keep on keepin' on.\n")
-        print("success. to tea not built yet")
-    elif final_roll <= 10 and path_choice == "1":
-        print("You fail. *sad noises*\n")
-        print("fail. to tea not built yet")
-    else:
-        print("You failed. Better luck next time.\n")
-        print("fail. to yes or no not built yet")
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
 def main():
@@ -334,8 +289,6 @@ def main():
     """
     character = choose_character()
     #stats = calculate_stats(character)
-    #roll = dice_roll()
-    #path_choice = choose_path()
     path_or_bridge(character)
 
 
