@@ -164,8 +164,8 @@ def elf_or_friends(character):
     path_choice = choose_path()
     roll = dice_roll()
 
-    first_path_initiate = elf # not built yet
-    second_path_initiate = friends # not built yet
+    first_path_initiate = elf 
+    second_path_initiate = friends 
 
     if character == "Barbarian":
         stats = Barbarian(4, -2)
@@ -300,6 +300,51 @@ def penny(character):
     print(f"You have rolled {final_roll}!\n")
 
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+
+def yes_or_no(character):
+    """
+    Function for path yes or no.
+    """
+
+    with open("./assets/story-files/yes-or-no.txt") as yn:
+        yn_text = yn.read()
+        print(yn_text)  
+
+    path_choice = choose_path()
+    roll = dice_roll()
+
+    first_path_initiate = north_or_rest #not built yet
+    second_path_initiate = tea
+
+    if character == "Barbarian":
+        yn_stats = Barbarian(2, -3)
+    elif character == "Rogue":
+        yn_stats = Rogue(2, -2)
+    else:
+        yn_stats = Sorcerer(1, -1)
+
+    if path_choice == "1":
+        final_roll = yn_stats.path_one + roll
+    elif path_choice == "2":
+        final_roll = yn_stats.path_two + roll
+
+    print(f"You have rolled {final_roll}!\n")
+
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+
+def tea(character):
+    """
+    Function for path tea, which resets game.
+    """
+
+    with open("./assets/story-files/tea.txt") as t:
+        t_text = t.read()
+        print(t_text)
+    
+    print("Returning to beginning of game...\n")
+    choose_character()
 
 
 def main():
