@@ -183,16 +183,28 @@ def elf_or_friends(character):
     
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
-def elf():
+def elf(character):
     """
     Function for path elf, which resets game.
     """
-    with open("./assets/story-files/quest-or-penny.txt") as el:
+    with open("./assets/story-files/elf.txt") as el:
         el_text = el.read()
         print(el_text)
     
-    print("Returning to beginning of game.../n")
+    print("Returning to beginning of game...\n")
     choose_character()
+
+
+def friends(character):
+    """
+    Function for path friend, which goes straight to quest-or-penny
+    without rolling.
+    """
+    with open("./assets/story-files/friends.txt") as fr:
+        fr_text = fr.read()
+        print(fr_text)
+    
+    quest_or_penny(character)
 
 
 def quest_or_penny(character):
