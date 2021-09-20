@@ -4,7 +4,7 @@ import random
 
 def choose_character():
     """
-    Ask user to choose character and assign it to user.
+    Introduce the game, ask user to choose character and assign it to user.
     """
 
     with open("./assets/story-files/intro.txt") as intro:
@@ -63,6 +63,10 @@ class Sorcerer:
         self.path_one = path_one 
         self.path_two = path_two 
 
+    def elf_or_friend_stats(self):
+        path_one = -2 #fake
+        path_two = 4 #fake
+
 
 def dice_roll():
     """
@@ -72,8 +76,9 @@ def dice_roll():
     roll = random.randrange(1, 20) # check range
     print(roll)
 
-    print("Rolling...")
+    print("Rolling...\n")
     return roll
+
 
 def choose_path():
     """
@@ -82,16 +87,17 @@ def choose_path():
     path_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
     return path_choice
 
+
 def path_or_bridge(character):
     """
     Function for path path_or_bridge, including text variants for each character
     """
 
     #variables needed for possible other functions are
-    #character
+    #character done
     #stats
-    #user choice
-    #path?
+    #user choice done
+    #path done?
 
     if character == "Barbarian":
         pb_stats = Barbarian(2, -2)
@@ -109,10 +115,11 @@ def path_or_bridge(character):
             pb_text = pb.read()
             print(pb_text)
 
-    #pb_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
     path_choice = choose_path()
     roll = dice_roll()
-    #roll = random.randrange(1, 20)
+
+    first_path_initiate = quest_or_penny
+    second_path_initiate = elf_or_friends
 
     if path_choice == "1":
         final_roll = pb_stats.path_one + roll
@@ -121,18 +128,43 @@ def path_or_bridge(character):
 
     print(f"You have rolled {final_roll}!\n")
 
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+    #if final_roll >= 11 and path_choice == "1":
+    #    print("Your roll succeeds! Forge ahead.\n")
+    #    quest_or_penny(character)
+    #elif final_roll >= 11 and path_choice == "2":
+    #    print("Nice! Head on.\n")
+    #    elf_or_friends(character)
+    #elif final_roll <= 10 and path_choice == "1":
+    #    print("You fail. Time to head the other way.\n")
+    #    elf_or_friends(character)
+    #else:
+    #    print("You failed. Big time. Gonna send you the other way.\n")
+    #    quest_or_penny(character)
+
+def path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate):
+    """
+    Function for determining which path will be taken, 
+    to be fed back into main path functions.
+    """
+
     if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Forge ahead.\n")
-        quest_or_penny(character)
+        print("success path 1 reached")
+        first_path_initiate(character)
     elif final_roll >= 11 and path_choice == "2":
         print("Nice! Head on.\n")
-        elf_or_friends(character)
+        print("success path 2 reached")
+        second_path_initiate(character)
     elif final_roll <= 10 and path_choice == "1":
         print("You fail. Time to head the other way.\n")
-        elf_or_friends(character)
+        print("fail path 1 reached")
+        second_path_initiate(character)
     else:
         print("You failed. Big time. Gonna send you the other way.\n")
-        quest_or_penny(character)
+        print("fail path 2 reached")
+        first_path_initiate(character)
 
 
 def elf_or_friends(character):
@@ -147,18 +179,17 @@ def elf_or_friends(character):
     roll = dice_roll()
 
     if character == "Barbarian":
-        ef_stats = Barbarian(4, -2)
+        stats = Barbarian(4, -2)
     elif character == "Rogue":
-        ef_stats = Rogue(2, 1)
+        stats = Rogue(2, 1)
     else:
-        ef_stats = Sorcerer(3, 1)
-
+        stats = Sorcerer(3, 1)
+    
     if path_choice == "1":
-        final_roll = ef_stats.path_one + roll
+        final_roll = stats.path_one + roll
     elif path_choice == "2":
-        final_roll = ef_stats.path_two + roll
+        final_roll = stats.path_two + roll
 
-    print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
     if final_roll >= 11 and path_choice == "1":
@@ -173,6 +204,9 @@ def elf_or_friends(character):
     else:
         print("You failed. Better luck next time.\n")
         print("fail. to elf not built yet")
+
+
+
 
 
 def quest_or_penny(character):
@@ -193,21 +227,20 @@ def quest_or_penny(character):
     else:
         qp_stats = Sorcerer(-4, 2)
 
-    if qp_choice == "1":
+    if path_choice == "1":
         final_roll = qp_stats.path_one + roll
-    elif qp_choice == "2":
+    elif path_choice == "2":
         final_roll = qp_stats.path_two + roll
 
-    print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and qp_choice == "1":
+    if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Forge ahead.\n")
         dangerous_or_tea(character)
-    elif final_roll >= 11 and qp_choice == "2":
+    elif final_roll >= 11 and path_choice == "2":
         print("Nice! Head on.\n")
         penny(character)
-    elif final_roll <= 10 and qp_choice == "1":
+    elif final_roll <= 10 and path_choice == "1":
         print("You fail. Time to head the other way.\n")
         penny(character)
     else:
@@ -234,21 +267,20 @@ def dangerous_or_tea(character):
     else:
         dt_stats = Sorcerer(3, -1)
 
-    if dt_choice == "1":
+    if path_choice == "1":
         final_roll = dt_stats.path_one + roll
-    elif dt_choice == "2":
+    elif path_choice == "2":
         final_roll = dt_stats.path_two + roll
 
-    print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and dt_choice == "1":
+    if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Keep going.\n")
         print("success. to yes or no not built yet")
-    elif final_roll >= 11 and dt_choice == "2":
+    elif final_roll >= 11 and path_choice == "2":
         print("Nice roll! Keep on keepin' on.\n")
         print("success. to tea not built yet")
-    elif final_roll <= 10 and dt_choice == "1":
+    elif final_roll <= 10 and path_choice == "1":
         print("You fail. *sad noises*. You have to take the other choice now.\n")
         print("fail. to tea not built yet")
     else:
@@ -275,21 +307,20 @@ def penny(character):
     else:
         penny_stats = Sorcerer(3, -1)
 
-    if penny_choice == "1":
+    if path_choice == "1":
         final_roll = penny_stats.path_one + roll
-    elif penny_choice == "2":
+    elif path_choice == "2":
         final_roll = penny_stats.path_two + roll
 
-    print("Rolling...\n")
     print(f"You have rolled {final_roll}!\n")
 
-    if final_roll >= 11 and penny_choice == "1":
+    if final_roll >= 11 and path_choice == "1":
         print("Your roll succeeds! Keep going.\n")
         print("success. to yes or no not built yet")
-    elif final_roll >= 11 and penny_choice == "2":
+    elif final_roll >= 11 and path_choice == "2":
         print("Nice roll! Keep on keepin' on.\n")
         print("success. to tea not built yet")
-    elif final_roll <= 10 and penny_choice == "1":
+    elif final_roll <= 10 and path_choice == "1":
         print("You fail. *sad noises*\n")
         print("fail. to tea not built yet")
     else:
@@ -302,10 +333,11 @@ def main():
     Run all program functions.
     """
     character = choose_character()
+    #stats = calculate_stats(character)
     #roll = dice_roll()
     #path_choice = choose_path()
     path_or_bridge(character)
-    
+
 
 
 main()
