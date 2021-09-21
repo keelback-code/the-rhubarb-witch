@@ -2,6 +2,7 @@
 
 import random
 
+
 def choose_character():
     """
     Introduce the game, ask user to choose character and assign it to user.
@@ -48,8 +49,8 @@ class Rogue:
         self.path_two = path_two 
 
     #def quest_or_penny_stats(self):
-    #    path_one = -2 #fake
-    #    path_two = 4 #fake
+    #    path_one = -2 fake
+    #    path_two = 4 fake
 
 
 class Sorcerer:
@@ -59,11 +60,7 @@ class Sorcerer:
 
     def __init__(self, path_one, path_two):
         self.path_one = path_one 
-        self.path_two = path_two 
-
-    def elf_or_friend_stats(self):
-        path_one = -2 #fake
-        path_two = 4 #fake
+        self.path_two = path_two
 
 
 def read_file(current_story_file):
@@ -189,8 +186,10 @@ def elf(character):
     Function for path elf, which resets game.
     """
     read_file("./assets/story-files/elf.txt")
-    print("Returning to beginning of game...\n")
-    main()
+    #print("Returning to beginning of game...\n")
+    reset_game = input("Type 'yes' to return to the beginning of the game.\n")
+    if reset_game == "yes":
+        main()
 
 
 def friends(character):
@@ -323,17 +322,15 @@ def tea(character):
     """
 
     read_file("./assets/story-files/tea.txt")
-    print("Returning to beginning of game...\n")
-    main()
+    reset_game = input("Type 'yes' to return to the beginning of the game.\n")
+    if reset_game == "yes":
+        main()
 
 
 def north_or_rest(character):
     """
     Function for north or rest.
     """
-    #with open("./assets/story-files/north-or-rest.txt") as nr:
-    #    nr_text = nr.read()
-    #    print(nr_text)  
 
     read_file("./assets/story-files/north-or-rest.txt")
     path_choice = choose_path()
@@ -358,14 +355,13 @@ def north_or_rest(character):
 
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
+
 def main():
     """
     Run all program functions.
     """
     character = choose_character()
-    #stats = calculate_stats(character)
     path_or_bridge(character)
-
 
 
 main()
