@@ -74,6 +74,8 @@ Rolling - a countdown/number of lines between the player making a choice and the
 
 Increased number of lines in terminal - 
 
+Type to return to the beginning - at first it automatically returned, but the player was unaware the change had happened and missed the ending all together. 
+
 ### Technologies
 Languages used:
 HTML5 ?

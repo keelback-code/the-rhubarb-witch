@@ -124,11 +124,24 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
         print("You failed. Big time. Gonna send you the other way.\n")
         first_path_initiate(character)
 
+def reset_game():
+    """
+    Function for resetting game when the end
+    of a path has been reached.
+    """
+
+    reset_game = input("Type 'yes' to return to the beginning of the game.\n")
+    if reset_game == "yes":
+        main()
+
 
 def path_or_bridge(character):
     """
     Function for path path_or_bridge, 
-    including text variants for each character
+    including text variants for each character.
+    Function sets stats, then calls the functions for choosing a path,
+    rolling the dice, calculating the final roll
+    and determining the path taken.
     """
 
     if character == "Barbarian":
@@ -177,10 +190,7 @@ def elf(character):
     Function for path elf, which resets game.
     """
     read_file("./assets/story-files/elf.txt")
-    #print("Returning to beginning of game...\n")
-    reset_game = input("Type 'yes' to return to the beginning of the game.\n")
-    if reset_game == "yes":
-        main()
+    reset_game()
 
 
 def friends(character):
@@ -338,8 +348,51 @@ def check_inn(character, penny):
     #path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 def sword_or_flamethrower(character):
-    print("reached sword or flamethrower")
+    """
+    Function for path sword or flamethrower.
+    """
 
+    if character == "Barbarian":
+        stats = Barbarian(1, 8)
+    elif character == "Rogue":
+        stats = Rogue(4, 2)
+    else:
+        stats = Sorcerer(6, -2)
+
+    first_path_initiate = barehanded_or_ovenmitts
+    second_path_initiate = flamethrower #not built
+
+    read_file("./assets/story-files/sword-or-flamethrower.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+def barehanded_or_ovenmitts(character):
+    """
+    Function for path barehanded or ovenmitts.
+    Includes text variant for each character.
+    """
+
+    if character == "Barbarian":
+        stats = Barbarian(5, -1)
+        read_file("./assets/story-files/barehanded-or-ovenmitts-barbarian-attack.txt")
+    elif character == "Rogue":
+        stats = Rogue(-3, 4)
+        read_file("./assets/story-files/barehanded-or-ovenmitts-rogue-attack.txt")
+    else:
+        stats = Sorcerer(-4, 5)
+        read_file("./assets/story-files/barehanded-or-ovenmitts-sorcerer-attack.txt")
+
+    first_path_initiate = barehanded #not built
+    second_path_initiate = ovenmitts #not built
+
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+def barehanded(character):
 
 def attack_or_run(character):
     print("reached attack or run")
