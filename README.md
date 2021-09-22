@@ -78,18 +78,15 @@ Type to return to the beginning - at first it automatically returned, but the pl
 
 ### Technologies
 Languages used:
+Python 3
 HTML5 ?
 CSS ?
 Javascript ?
-Python 3
+
 Frameworks, Libraries and Programs Used:
-Google Fonts - for the typography ?
-Balsamiq - for creating the wireframes in the design stage ?
-Firefox Developer Tools - for inspecting and testing the site
 GitHub - for hosting the site
-GitPages - for the deployment of the site
+Heroku - for the deployment of the site
 Gitpod - for editing the files
-Heroku?
 
 ### Testing 
 
@@ -109,5 +106,8 @@ Within the repository, click the 'Code' dropdown, which is located next to 'Add 
 In the same 'Code' dropdown, you can opt to open the code with GitHub Desktop and work from there.
 
 ### Credits (content and media)
-Character class information - research done on dungeons and dragons fandom .com (link) and d&d beyond (link)
+Research for information on Dungeons and Dragons character class information comes from:
+ - https://dungeonsdragons.fandom.com/wiki/Dungeons_and_Dragons_Wiki 
+ - https://www.dndbeyond.com/
+
 All HTML and CSS (except the minimal amount of code where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
