@@ -72,6 +72,8 @@ Semantic HTML and aria labels were implemented across the site (only keep this s
 
 Rolling - a countdown/number of lines between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. 
 
+Increased number of lines in terminal - 
+
 ### Technologies
 Languages used:
 HTML5 ?
@@ -106,3 +108,4 @@ In the same 'Code' dropdown, you can opt to open the code with GitHub Desktop an
 
 ### Credits (content and media)
 Character class information - research done on dungeons and dragons fandom .com (link) and d&d beyond (link)
+All HTML and CSS (except the minimal amount of code where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
