@@ -298,9 +298,7 @@ def tea(character):
     """
 
     read_file("./assets/story-files/tea.txt")
-    reset_game = input("Type 'yes' to return to the beginning of the game.\n")
-    if reset_game == "yes":
-        main()
+    reset_game()
 
 
 def north_or_rest(character):
@@ -393,6 +391,13 @@ def barehanded_or_ovenmitts(character):
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 def barehanded(character):
+    """
+    Function for path barehanded, which resets game.
+    """
+
+    read_file("./assets/story-files/barehanded.txt")
+    reset_game()
+
 
 def attack_or_run(character):
     print("reached attack or run")
