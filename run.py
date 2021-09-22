@@ -106,7 +106,7 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
         print("Your roll succeeds! Forge ahead.\n")
         first_path_initiate(character)
     elif final_roll >= 11 and path_choice == "2":
-        print("Nice! Head onwards.\n")
+        print("Success! Head onwards.\n")
         second_path_initiate(character)
     elif final_roll <= 10 and path_choice == "1":
         print("You fail. Time to head the other way.\n")
@@ -244,9 +244,9 @@ def dangerous_or_tea(character):
     if character == "Barbarian":
         stats = Barbarian(3, -1)
     elif character == "Rogue":
-        stats = Rogue(3, 1)
+        stats = Barbarian(3, 1)
     else:
-        stats = Sorcerer(3, -1)
+        stats = Barbarian(3, -1)
 
     if path_choice == "1":
         final_roll = stats.path_one + roll
