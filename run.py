@@ -10,6 +10,7 @@ def choose_character():
 
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
 
+        
     if user_choice == "1":
         user_character = "Barbarian"
     elif user_choice == "2":
@@ -17,7 +18,9 @@ def choose_character():
     elif user_choice == "3":
         user_character = "Sorcerer"
     else:
-        print("Error") # refine this
+        print("Error, you have not chosen one of the assigned characters.")
+        print("Please try again.\n")
+        main()
 
     print(f"You have chosen {user_character}")
 
