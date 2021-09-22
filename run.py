@@ -96,6 +96,22 @@ def dice_roll():
     return roll
 
 
+def calculate_final_roll(roll, stats, path_choice):
+    """
+    Function to determine which stats to use and add
+    it to the roll.
+    """
+
+    if path_choice == "1":
+        final_roll = stats.path_one + roll
+    elif path_choice == "2":
+        final_roll = stats.path_two + roll
+
+    print(f"You have rolled {final_roll}!\n")
+
+    return final_roll
+
+
 def path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate):
     """
     Function for determining which path will be taken
@@ -143,12 +159,9 @@ def path_or_bridge(character):
     first_path_initiate = quest_or_penny
     second_path_initiate = elf_or_friends
 
-    if path_choice == "1":
-        final_roll = stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = stats.path_two + roll
+    
 
-    print(f"You have rolled {final_roll}!\n")
+    final_roll = calculate_final_roll(roll, stats, path_choice)
 
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
