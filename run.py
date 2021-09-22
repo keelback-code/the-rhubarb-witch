@@ -1,5 +1,3 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import random
 
 
@@ -46,11 +44,7 @@ class Rogue:
 
     def __init__(self, path_one, path_two):
         self.path_one = path_one 
-        self.path_two = path_two 
-
-    #def quest_or_penny_stats(self):
-    #    path_one = -2 fake
-    #    path_two = 4 fake
+        self.path_two = path_two
 
 
 class Sorcerer:
@@ -89,7 +83,7 @@ def dice_roll():
     Dice roll and text to be used in other functions.
     """
 
-    roll = random.randrange(1, 20) # check range
+    roll = random.randrange(1, 20)
     print(roll)
 
     print("Rolling...\n")
@@ -134,14 +128,9 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
 
 def path_or_bridge(character):
     """
-    Function for path path_or_bridge, including text variants for each character
+    Function for path path_or_bridge, 
+    including text variants for each character
     """
-
-    #variables needed for possible other functions are
-    #character done
-    #stats
-    #user choice done
-    #path done
 
     if character == "Barbarian":
         stats = Barbarian(2, -2)
@@ -153,16 +142,12 @@ def path_or_bridge(character):
         stats = Sorcerer(2, -2)
         read_file("./assets/story-files/path-or-bridge-sorcerer.txt")
 
-    path_choice = choose_path()
-    roll = dice_roll()
-
     first_path_initiate = quest_or_penny
     second_path_initiate = elf_or_friends
 
-    
-
+    path_choice = choose_path()
+    roll = dice_roll()
     final_roll = calculate_final_roll(roll, stats, path_choice)
-
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -170,12 +155,6 @@ def elf_or_friends(character):
     """
     Function for path elf_or_friends
     """
-    read_file("./assets/story-files/elf-or-friends.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-
-    first_path_initiate = elf 
-    second_path_initiate = friends 
 
     if character == "Barbarian":
         stats = Barbarian(-1, 2)
@@ -183,14 +162,14 @@ def elf_or_friends(character):
         stats = Rogue(-2, 2)
     else:
         stats = Sorcerer(-3, 2)
-    
-    if path_choice == "1":
-        final_roll = stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = stats.path_two + roll
 
-    print(f"You have rolled {final_roll}!\n")
-    
+    first_path_initiate = elf 
+    second_path_initiate = friends 
+
+    read_file("./assets/story-files/elf-or-friends.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -218,12 +197,6 @@ def quest_or_penny(character):
     """
     Function for path quest_or_penny
     """
-    read_file("./assets/story-files/quest-or-penny.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-
-    first_path_initiate = dangerous_or_tea
-    second_path_initiate = penny
 
     if character == "Barbarian":
         stats = Barbarian(5, -3)
@@ -232,13 +205,13 @@ def quest_or_penny(character):
     else:
         stats = Sorcerer(-4, 2)
 
-    if path_choice == "1":
-        final_roll = stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = stats.path_two + roll
+    first_path_initiate = dangerous_or_tea
+    second_path_initiate = penny
 
-    print(f"You have rolled {final_roll}!\n")
-
+    read_file("./assets/story-files/quest-or-penny.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -247,13 +220,6 @@ def dangerous_or_tea(character):
     Function for path dangerous_or_tea
     """
 
-    read_file("./assets/story-files/dangerous-or-tea.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-
-    first_path_initiate = yes_or_no
-    second_path_initiate = tea
-
     if character == "Barbarian":
         stats = Barbarian(3, -1)
     elif character == "Rogue":
@@ -261,13 +227,13 @@ def dangerous_or_tea(character):
     else:
         stats = Barbarian(3, -1)
 
-    if path_choice == "1":
-        final_roll = stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = stats.path_two + roll
+    first_path_initiate = yes_or_no
+    second_path_initiate = tea
 
-    print(f"You have rolled {final_roll}!\n")
-    
+    read_file("./assets/story-files/dangerous-or-tea.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -276,13 +242,6 @@ def penny(character):
     Function for path variant of dangerous_or_tea where you collect an item for later.
     """
 
-    read_file("./assets/story-files/penny.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-
-    first_path_initiate = yes_or_no
-    second_path_initiate = tea
-
     if character == "Barbarian":
         penny_stats = Barbarian(3, -1)
     elif character == "Rogue":
@@ -290,27 +249,22 @@ def penny(character):
     else:
         penny_stats = Sorcerer(3, -1)
 
-    if path_choice == "1":
-        final_roll = penny_stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = penny_stats.path_two + roll
+    first_path_initiate = yes_or_no
+    second_path_initiate = tea
 
-    print(f"You have rolled {final_roll}!\n")
-
+    read_file("./assets/story-files/penny.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+    #return penny? for check_inn
 
 
 def yes_or_no(character):
     """
     Function for path yes or no.
     """
-
-    read_file("./assets/story-files/yes-or-no.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-
-    first_path_initiate = north_or_rest
-    second_path_initiate = tea
 
     if character == "Barbarian":
         stats = Barbarian(2, -3)
@@ -319,13 +273,13 @@ def yes_or_no(character):
     else:
         stats = Sorcerer(1, -1)
 
-    if path_choice == "1":
-        final_roll = stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = stats.path_two + roll
+    first_path_initiate = north_or_rest
+    second_path_initiate = tea
 
-    print(f"You have rolled {final_roll}!\n")
-
+    read_file("./assets/story-files/yes-or-no.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -345,13 +299,6 @@ def north_or_rest(character):
     Function for north or rest.
     """
 
-    read_file("./assets/story-files/north-or-rest.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-
-    first_path_initiate = north_or_rest
-    second_path_initiate = tea
-
     if character == "Barbarian":
         stats = Barbarian(2, -3)
     elif character == "Rogue":
@@ -359,13 +306,13 @@ def north_or_rest(character):
     else:
         stats = Sorcerer(1, -1)
 
-    if path_choice == "1":
-        final_roll = stats.path_one + roll
-    elif path_choice == "2":
-        final_roll = stats.path_two + roll
+    first_path_initiate = north_or_rest
+    second_path_initiate = tea
 
-    print(f"You have rolled {final_roll}!\n")
-
+    read_file("./assets/story-files/north-or-rest.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
