@@ -10,7 +10,6 @@ def choose_character():
 
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
 
-        
     if user_choice == "1":
         user_character = "Barbarian"
     elif user_choice == "2":
@@ -69,12 +68,15 @@ def read_file(current_story_file):
 
 def choose_path():
     """
-    Function for choosing path and returning value to main()
+    Function for choosing path and returning value to functions.
     """
-    path_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-    return path_choice
 
-    #also catch input errors?
+    path_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+    if path_choice == "1" or "2":
+        return path_choice
+    else:
+        print("Error, you have not chosen one of the options.")
+        print("Please try again.\n")
 
 
 def dice_roll():
@@ -124,14 +126,16 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
         print("You failed. Big time. Gonna send you the other way.\n")
         first_path_initiate(character)
 
+
 def reset_game():
     """
     Function for resetting game when the end
     of a path has been reached.
     """
 
-    reset_game = input("Type 'yes' to return to the beginning of the game.\n")
-    if reset_game == "yes":
+    reset = input("Type 'r' to return to the beginning of the game.\n")
+    game_reset = reset.lower()
+    if game_reset == "r":
         main()
 
 
@@ -175,8 +179,8 @@ def elf_or_friends(character):
     else:
         stats = Sorcerer(-3, 2)
 
-    first_path_initiate = elf 
-    second_path_initiate = friends 
+    first_path_initiate = elf
+    second_path_initiate = friends
 
     read_file("./assets/story-files/elf-or-friends.txt")
     path_choice = choose_path()
@@ -198,6 +202,7 @@ def friends(character):
     Function for path friend, which goes straight to quest-or-penny
     without rolling.
     """
+
     read_file("./assets/story-files/friends.txt")
     quest_or_penny(character)
 
@@ -248,7 +253,8 @@ def dangerous_or_tea(character):
 
 def penny(character):
     """
-    Function for path variant of dangerous_or_tea where you collect an item for later.
+    Function for path variant of dangerous_or_tea,
+    where you collect an item for later.
     """
 
     if character == "Barbarian":
@@ -267,7 +273,9 @@ def penny(character):
     final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
-    return penny
+    retain_penny = True
+
+    return retain_penny
 
 
 def yes_or_no(character):
@@ -313,26 +321,38 @@ def north_or_rest(character):
     else:
         stats = Sorcerer(1, -1)
 
-    first_path_initiate = attack_or_run #not built
+    first_path_initiate = attack_or_run 
     second_path_initiate = check_inn
 
     read_file("./assets/story-files/north-or-rest.txt")
     path_choice = choose_path()
     roll = dice_roll()
     final_roll = calculate_final_roll(roll, stats, path_choice)
-    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+    #path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+    if final_roll >= 11 and path_choice == "1":
+        print("Your roll succeeds! Forge ahead.\n")
+        first_path_initiate(character)
+    elif final_roll >= 11 and path_choice == "2":
+        print("Success! Head onwards.\n")
+        second_path_initiate(character, retain_penny)
+    elif final_roll <= 10 and path_choice == "1":
+        print("You fail. Time to head the other way.\n")
+        second_path_initiate(character, retain_penny)
+    else:
+        print("You failed. Big time. Gonna send you the other way.\n")
+        first_path_initiate(character)
 
 
-def check_inn(character, penny):
+def check_inn(character, retain_penny):
     """
     Function for path check_inn, which checks if you received
-    the item in path penny.
+    the item in path penny and takes the relevant path forward.
     """
 
     read_file("./assets/story-files/check-inn.txt")
 
-    if penny is True:
-        print("You have the penny; continue onwards.")
+    if retain_penny is True:
+        print("You have the penny from the witch; continue onwards.")
         sword_or_flamethrower(character)
     else:
         print("Your purse is empty; too bad.")
@@ -366,6 +386,16 @@ def sword_or_flamethrower(character):
     final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
+
+def flamethrower(character):
+    """
+    Function for path flamethrower, which resets game.
+    """
+
+    read_file("./assets/story-files/flamethrower.txt")
+    reset_game()
+
+
 def barehanded_or_ovenmitts(character):
     """
     Function for path barehanded or ovenmitts.
@@ -382,13 +412,14 @@ def barehanded_or_ovenmitts(character):
         stats = Sorcerer(-4, 5)
         read_file("./assets/story-files/barehanded-or-ovenmitts-sorcerer-attack.txt")
 
-    first_path_initiate = barehanded #not built
+    first_path_initiate = barehanded 
     second_path_initiate = ovenmitts #not built
 
     path_choice = choose_path()
     roll = dice_roll()
     final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
 
 def barehanded(character):
     """
@@ -399,8 +430,42 @@ def barehanded(character):
     reset_game()
 
 
+def ovenmitts(character):
+    """
+    Function for ovenmitts, which is a winning path and resets the game.
+    """
+    read_file("./assets/story-files/ovenmitts-end.txt")
+    reset_game()
+
+
 def attack_or_run(character):
-    print("reached attack or run")
+    """
+    Function for path attack or run.
+    """
+
+    if character == "Barbarian":
+        stats = Barbarian(6, -6)
+    elif character == "Rogue":
+        stats = Rogue(5, -1)
+    else:
+        stats = Sorcerer(4, -2)
+    
+    first_path_initiate = grab_or_send #not built
+    second_path_initiate = run #not built
+
+    read_file("./assets/story-files/attack-or-run.txt")
+    path_choice = choose_path()
+    roll = dice_roll()
+    final_roll = calculate_final_roll(roll, stats, path_choice)
+    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+
+def grab_or_send(character):
+    print("reached grab or send")
+
+
+def run(character):
+    print("reached run")
 
 
 def main():
