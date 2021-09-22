@@ -7,6 +7,7 @@ def choose_character():
     """
 
     read_file("./assets/story-files/intro.txt")
+    user_final_name = user_name()
 
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
 
@@ -24,6 +25,23 @@ def choose_character():
     print(f"You have chosen {user_character}")
 
     return user_character
+
+
+def user_name():
+    """
+    Function to get the user's name and generate
+    an in-game name for them.
+    """
+    game_last_names = ["The Night Bringer", "The Day Waker", "The Garrulous", "Of The Adler Groves", "Of The Deep Forests", "Of The Underbrush", "Of The Deep Places", "Of The Dark Dank", "The Eldest", "The Elder", "The Young", "The Middle", "The Last", "The Wizened", "The Feeble", "The Feral", "The Knotty", "The Friable", "Of Horndown", "The Wet", "The Moist", "The Cantankerous", "The Dulcet", "The Ghastly", "Of The Long Spindle", "Of The Dells", "Of Widow's Peak", "Of Glendale, CA", "The Long of Neck, Humped of Back", "The Wyrd", "The Not-Terrible", "The Amazing Fantastic Excellent Very Good", "The Intergalactic", "The Nefarious", "The Relentless", "The Cryptic", "The Luminuous", "The Shimmerer", "The Mathemagician", "The Ordinary", "Devourer Of Nibbles", "The Betrayer", "The Unassuming", "Of Many Hats", "Hoarder of Shiny Things", "The Most Stinky", "Of The Pub Around The Corner", "The Extravagant", "The Perpetually Miffed", "The Vile", "The Sneaky", "Who Flees Before Small Canines", "Liberator of Cockroaches", "The Snarky", "The Smug", "Who You've Probably Never Heard Of But I'm Really Super Famous In Flurgleburg, I Swear", "Weaver of Despair and Baskets", "Of Chains", "Of The Sun", "The Tight Lipped", "Master of Destruction", "Tamer Of Things That Need Taming", "Eater of Peanuts", "The Sparkly", "The Engulfed", "Of Lasers", "Fire-eater", "Master of Various Liquids", "Earthen Fist", "The Light", "Of Fanciness", "The Fancy", "The Forgetful", "Of The Fairies", "Of The Merpeople", "Cyclops Slayer", "User of Tiny Things", "The Perpetually Sleepy", "The Saboteur"]
+    
+    print("Welcome to 'The Rhubarb Witch'!")
+    user = input("Please input your name and I will give you a new name for the duration of the game.\n")
+    user_last_name = random.choice(game_last_names)
+    user_final_name = user + " " + user_last_name
+
+    print(f"Welcome {user}! Your new name is {user_final_name}")
+
+    return user_final_name
 
 
 class Barbarian:
