@@ -7,8 +7,6 @@ def choose_character():
     """
 
     read_file("./assets/story-files/intro.txt")
-    user_final_name = user_name()
-
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
 
     if user_choice == "1":
@@ -18,7 +16,7 @@ def choose_character():
     elif user_choice == "3":
         user_character = "Sorcerer"
     else:
-        print("Error, you have not chosen one of the assigned characters.")
+        print("Error, you have not chosen one of the available characters.")
         print("Please try again.\n")
         main()
 
@@ -39,7 +37,7 @@ def user_name():
     user_last_name = random.choice(game_last_names)
     user_final_name = user + " " + user_last_name
 
-    print(f"Welcome {user}! Your new name is {user_final_name}")
+    print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
     return user_final_name
 
@@ -151,7 +149,7 @@ def reset_game():
     of a path has been reached.
     """
 
-    reset = input("Type 'r' to return to the beginning of the game.\n")
+    reset = input(f"Thanks for playing, {user_final_name}. Type 'r' to return to the beginning of the game.\n")
     game_reset = reset.lower()
     if game_reset == "r":
         main()
@@ -520,6 +518,7 @@ def main():
     Run all program functions.
     """
 
+    user_final_name = user_name()
     character = choose_character()
     path_or_bridge(character)
 
