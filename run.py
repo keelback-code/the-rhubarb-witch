@@ -7,10 +7,6 @@ def choose_character():
     """
 
     read_file("./assets/story-files/intro.txt")
- 
-    print("1 - Barbarian")
-    print("2 - Rogue")
-    print("3 - Sorcerer")
 
     user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
 
@@ -243,11 +239,11 @@ def penny(character):
     """
 
     if character == "Barbarian":
-        penny_stats = Barbarian(3, -1)
+        stats = Barbarian(3, -1)
     elif character == "Rogue":
-        penny_stats = Rogue(3, 1)
+        stats = Rogue(3, 1)
     else:
-        penny_stats = Sorcerer(3, -1)
+        stats = Sorcerer(3, -1)
 
     first_path_initiate = yes_or_no
     second_path_initiate = tea
@@ -258,7 +254,7 @@ def penny(character):
     final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
-    #return penny? for check_inn
+    return penny
 
 
 def yes_or_no(character):
@@ -306,14 +302,44 @@ def north_or_rest(character):
     else:
         stats = Sorcerer(1, -1)
 
-    first_path_initiate = north_or_rest
-    second_path_initiate = tea
+    first_path_initiate = attack_or_run #not built
+    second_path_initiate = check_inn
 
     read_file("./assets/story-files/north-or-rest.txt")
     path_choice = choose_path()
     roll = dice_roll()
     final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+
+def check_inn(character, penny):
+    """
+    Function for path check_inn, which checks if you received
+    the item in path penny.
+    """
+
+    read_file("./assets/story-files/check-inn.txt")
+
+    if penny is True:
+        print("You have the penny; continue onwards.")
+        sword_or_flamethrower(character)
+    else:
+        print("Your purse is empty; too bad.")
+        attack_or_run(character)
+
+
+    
+    #path_choice = choose_path()
+    #roll = dice_roll()
+    #final_roll = calculate_final_roll(roll, stats, path_choice)
+    #path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+
+def sword_or_flamethrower(character):
+    print("reached sword or flamethrower")
+
+
+def attack_or_run(character):
+    print("reached attack or run")
 
 
 def main():

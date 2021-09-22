@@ -4,5 +4,17 @@ Be mindful who you choose, it will affect the outcome of your choices!
 Each time you have to make a decision, I will roll a dice to see whether 
 you succeed or fail, so choose carefully! If you roll above 10 you can go your
 chosen way, if you roll below then I will send you on the other path.
- character info here
+
 Your options are:
+
+1. Barbarian
+You are very proficient with weapons but are prone to fly into a rage 
+at a moment's notice. You often make rash, but bold decisions.
+
+2. Rogue
+You are stealthy and can wield magic daggers. You often make clever 
+but sneaky decisions, and you look exactly like Aragorn. 
+
+3. Sorcerer
+You were born with an arcane magical power. You're mysterious 
+and can call familiars to your side (preference for cats).
