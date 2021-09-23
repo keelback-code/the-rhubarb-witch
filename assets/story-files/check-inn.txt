@@ -2,3 +2,5 @@ You head to a nearby commercial establishment designed for sleeping.
 The cost for a night is one silver coin. 
 
 Did you get this from the witch earlier?
+
+Checking inventory...

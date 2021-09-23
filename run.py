@@ -1,5 +1,7 @@
 import random
 
+inventory = []
+
 class Barbarian:
     """
     Barbarian class to be used by functions
@@ -62,7 +64,7 @@ def user_name():
     game_last_names = ["The Night Bringer", "The Day Waker", "The Garrulous", "Of The Adler Groves", "Of The Deep Forests", "Of The Underbrush", "Of The Deep Places", "Of The Dark Dank", "The Eldest", "The Elder", "The Young", "The Middle", "The Last", "The Wizened", "The Feeble", "The Feral", "The Knotty", "The Friable", "Of Horndown", "The Wet", "The Moist", "The Cantankerous", "The Dulcet", "The Ghastly", "Of The Long Spindle", "Of The Dells", "Of Widow's Peak", "Of Glendale, CA", "The Long of Neck, Humped of Back", "The Wyrd", "The Not-Terrible", "The Amazing Fantastic Excellent Very Good", "The Intergalactic", "The Nefarious", "The Relentless", "The Cryptic", "The Luminuous", "The Shimmerer", "The Mathemagician", "The Ordinary", "Devourer Of Nibbles", "The Betrayer", "The Unassuming", "Of Many Hats", "Hoarder of Shiny Things", "The Most Stinky", "Of The Pub Around The Corner", "The Extravagant", "The Perpetually Miffed", "The Vile", "The Sneaky", "Who Flees Before Small Canines", "Liberator of Cockroaches", "The Snarky", "The Smug", "Who You've Probably Never Heard Of But I'm Really Super Famous In Flurgleburg, I Swear", "Weaver of Despair and Baskets", "Of Chains", "Of The Sun", "The Tight Lipped", "Master of Destruction", "Tamer Of Things That Need Taming", "Eater of Peanuts", "The Sparkly", "The Engulfed", "Of Lasers", "Fire-eater", "Master of Various Liquids", "Earthen Fist", "The Light", "Of Fanciness", "The Fancy", "The Forgetful", "Of The Fairies", "Of The Merpeople", "Cyclops Slayer", "User of Tiny Things", "The Perpetually Sleepy", "The Saboteur"]
 
     print("Welcome to 'The Rhubarb Witch'!")
-    user = input("Please input your name and I will give you a new name for the duration of the game.\n")
+    user = input("Please input your name and I will lend you a new one for the game.\n")
     user_last_name = random.choice(game_last_names)
     user_final_name = user + " " + user_last_name
 
@@ -277,6 +279,8 @@ def penny(character):
     Function for path variant of dangerous_or_tea,
     where you collect an item for later.
     """
+    inventory.append("1 penny")
+
     if character == "Barbarian":
         stats = Barbarian(3, -1)
     elif character == "Rogue":
@@ -285,15 +289,11 @@ def penny(character):
         stats = Sorcerer(3, -1)
 
     current_path = penny
-    first_path_initiate = yes_or_no
-    second_path_initiate = tea
+    first_path_initiate = check_inn
+    second_path_initiate = check_inn
 
     read_file("./assets/story-files/penny.txt")
     main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
-
-    #retain_penny = True
-
-    #return retain_penny
 
 
 def yes_or_no(character):
@@ -353,11 +353,11 @@ def check_inn(character):
     read_file("./assets/story-files/check-inn.txt")
     current_path = check_inn
 
-    if retain_penny is True:
-        print("You have the penny from the witch; continue onwards.")
+    if "1 penny" in inventory:
+        print("You have the penny from the witch; continue onwards.\n")
         sword_or_flamethrower(character)
     else:
-        print("Your purse is empty; too bad.")
+        print("Your purse is empty; too bad.\n")
         attack_or_run(character)
 
 
