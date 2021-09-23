@@ -111,3 +111,5 @@ Research for information on Dungeons and Dragons character class information com
  - https://www.dndbeyond.com/
 
 All HTML and CSS (except the minimal amount of code where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
+
+Background image comes from [Pexels](https://www.pexels.com/)
