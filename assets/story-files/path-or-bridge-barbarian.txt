@@ -1,8 +1,12 @@
-You enter a busy, raucous inn. You see a table with three adventurers huddled closely around it and approach them. 
-They eye you with distrust; to prove yourself as a worthy travelling companion you down a pint of beer faster 
-than the 23rd prime minister of Australia and crush the empty glass with your fist.
+You enter a busy, raucous inn. You see a table with three 
+adventurers huddled closely around it and approach them. 
+They eye you with distrust; to prove yourself as a worthy 
+travelling companion you down a pint of beer faster than 
+the 23rd prime minister of Australia and crush the empty 
+glass with your fist.
 The others accept you and you all head outside together. 
-There are two paths; your new companions turn to you, entrusting you with the first decision of the journey. Do you:
+There are two paths; your new companions turn to you, 
+entrusting you with the first decision of the journey. Do you:
 
 1. Take the rocky path leading to a cottage owned by a local witch. Perhaps she has a quest for you.
 

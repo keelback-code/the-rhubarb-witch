@@ -1,11 +1,15 @@
-You all set off north. As you reach the Bog half a dozen spike-covered heads pop up from behind the shubbery. 
-Punk goblins! Your  unneccessarily long sword should come in handy here.
-In fact, this could be two swords. You snap the sword in half and deftly start stabbing goblins, 
-who are bobbing up and down like a game of whack a mole. Carnival music starts playing, 
-which fades out as you skewer the last punk.
+You all set off north. As you reach the Bog half a dozen 
+spike-covered heads pop up from behind the shubbery. 
+Punk goblins! Your  unneccessarily long sword should 
+come in handy here. In fact, this could be two swords. 
+You snap the sword in half and deftly start stabbing goblins, 
+who are bobbing up and down like a game of whack a mole. 
+Carnival music starts playing, which fades out as you skewer the last punk.
+
 You and your adventuring party have a celebratory group hug. 
-You have successfully entered the Bog and you can see the dark talisman from here. 
-It glows brightly; did the goblins curse it? You:
+
+You have successfully entered the Bog and you can see the dark 
+talisman from here. It glows brightly; did the goblins curse it? You:
 
 1. Go grab it barehanded 
 

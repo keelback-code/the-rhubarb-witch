@@ -1,6 +1,7 @@
 You send one of your travelling companions; 
-by this point in the quest your bond of friendship has been forged in the fire. 
-Your companion picks up the talisman and immediately bursts into flames. 
+by this point in the quest your bond of friendship 
+has been forged in the fire. Your companion picks up 
+the talisman and immediately bursts into flames. 
 You have failed the test of friendship and the rest of your party all walk off. 
 
 Game Over.
