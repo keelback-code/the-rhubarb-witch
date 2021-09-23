@@ -205,14 +205,12 @@ def elf_or_friends(character):
     else:
         stats = Sorcerer(-3, 2)
 
+    current_path = elf_or_friends
     first_path_initiate = elf
     second_path_initiate = friends
 
     read_file("./assets/story-files/elf-or-friends.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-    final_roll = calculate_final_roll(roll, stats, path_choice)
-    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
 
 
 def elf(character):
@@ -243,14 +241,12 @@ def quest_or_penny(character):
     else:
         stats = Sorcerer(-4, 2)
 
+    current_path = quest_or_penny
     first_path_initiate = dangerous_or_tea
     second_path_initiate = penny
 
     read_file("./assets/story-files/quest-or-penny.txt")
-    path_choice = choose_path()
-    roll = dice_roll()
-    final_roll = calculate_final_roll(roll, stats, path_choice)
-    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
 
 
 def dangerous_or_tea(character):
