@@ -35,7 +35,8 @@ def choose_character():
     Introduce the game, ask user to choose character and assign it to user.
     """
     read_file("./assets/story-files/intro.txt")
-    user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
+    #user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
+    user_choice = input("Please type the number for the character you want to select:\n")
 
     if user_choice == "1":
         user_character = "Barbarian"
@@ -48,7 +49,7 @@ def choose_character():
         print("Please try again.\n")
         main()
 
-    print(f"You have chosen {user_character}")
+    print(f"You have chosen {user_character}\n")
 
     return user_character
 
@@ -95,7 +96,8 @@ def choose_path(character, current_path):
     Uses current_path to determine user error and return to beginning
     of current path. All paths require character variable.
     """
-    user_choice = input("Please enter your choice here; type the number for the path you want to take:\n")    
+    #user_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
+    user_choice = input("Would you like to take path 1 or path 2?:\n")    
     if user_choice == "1":
         path = "1"
     elif user_choice == "2":
