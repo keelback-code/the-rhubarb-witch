@@ -67,7 +67,15 @@ def user_name():
 
     print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
-    return user_final_name #remove this if not used
+
+def read_file(current_story_file):
+    """
+    Function to open, read, print and close all 
+    story files to feed into other functions.
+    """
+    with open(current_story_file) as file:
+        file_text = file.read()
+        print(file_text)
 
 
 def main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate):
@@ -79,16 +87,6 @@ def main_game_play(character, stats, current_path, first_path_initiate, second_p
     roll = dice_roll()
     final_roll = calculate_final_roll(roll, stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
-
-
-def read_file(current_story_file):
-    """
-    Function to open, read, print and close all 
-    story files to feed into other functions.
-    """
-    with open(current_story_file) as file:
-        file_text = file.read()
-        print(file_text)
 
 
 def choose_path(character, current_path):
@@ -115,8 +113,6 @@ def dice_roll():
     Dice roll and text to be used in other functions.
     """
     roll = random.randrange(1, 20)
-    print(roll)
-
     print("Rolling...\n")
     return roll
 
@@ -173,7 +169,8 @@ def path_or_bridge(character):
     """
     Function for path path_or_bridge, 
     including text variants for each character.
-    Function sets stats, then calls the functions for choosing a path,
+    Function sets stats, then calls the main_game_play function, 
+    which in turn calls the functions for choosing a path,
     rolling the dice, calculating the final roll
     and determining the path taken.
     """
@@ -196,7 +193,8 @@ def path_or_bridge(character):
 
 def elf_or_friends(character):
     """
-    Function for path elf_or_friends
+    Function for path elf_or_friends, which sets class variables
+    and assigns paths.
     """
     if character == "Barbarian":
         stats = Barbarian(-1, 2)
@@ -234,7 +232,8 @@ def friends(character):
 
 def quest_or_penny(character):
     """
-    Function for path quest_or_penny
+    Function for path quest_or_penny, which sets class variables
+    and assigns paths.
     """
     if character == "Barbarian":
         stats = Barbarian(5, -3)
@@ -253,7 +252,8 @@ def quest_or_penny(character):
 
 def dangerous_or_tea(character):
     """
-    Function for path dangerous_or_tea
+    Function for path dangerous_or_tea, which sets class variables
+    and assigns paths.
     """
     if character == "Barbarian":
         stats = Barbarian(3, -1)
@@ -296,7 +296,8 @@ def penny(character):
 
 def yes_or_no(character):
     """
-    Function for path yes or no.
+    Function for path yes or no, which sets class variables
+    and assigns paths.
     """
     if character == "Barbarian":
         stats = Barbarian(2, -3)
@@ -360,7 +361,8 @@ def check_inn(character):
 
 def sword_or_flamethrower(character):
     """
-    Function for path sword or flamethrower.
+    Function for path sword or flamethrower, which sets class variables
+    and assigns paths.
     """
     if character == "Barbarian":
         stats = Barbarian(1, 8)
@@ -428,7 +430,8 @@ def ovenmitts(character):
 
 def attack_or_run(character):
     """
-    Function for path attack or run.
+    Function for path attack or run, which sets class variables
+    and assigns paths.
     """
     if character == "Barbarian":
         stats = Barbarian(6, -6)
