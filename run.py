@@ -2,13 +2,14 @@ import random
 
 inventory = []
 
+
 class Barbarian:
     """
     Barbarian class to be used by functions
     to determine which stats to use.
     """
     def __init__(self, path_one, path_two):
-        self.path_one = path_one 
+        self.path_one = path_one
         self.path_two = path_two
 
 
@@ -18,7 +19,7 @@ class Rogue:
     to determine which stats to use.
     """
     def __init__(self, path_one, path_two):
-        self.path_one = path_one 
+        self.path_one = path_one
         self.path_two = path_two
 
 
@@ -28,7 +29,7 @@ class Sorcerer:
     to determine which stats to use.
     """
     def __init__(self, path_one, path_two):
-        self.path_one = path_one 
+        self.path_one = path_one
         self.path_two = path_two
 
 
@@ -37,7 +38,6 @@ def choose_character():
     Introduce the game, ask user to choose character and assign it to user.
     """
     read_file("./assets/story-files/intro.txt")
-    #user_choice = input("Please enter your choice here; type the number for the character you want to select:\n")
     user_choice = input("Please type the number for the character you want to select:\n")
 
     if user_choice == "1":
@@ -73,7 +73,7 @@ def user_name():
 
 def read_file(current_story_file):
     """
-    Function to open, read, print and close all 
+    Function to open, read, print and close all
     story files to feed into other functions.
     """
     with open(current_story_file) as file:
@@ -98,8 +98,8 @@ def choose_path(character, current_path):
     Uses current_path to determine user error and return to beginning
     of current path. All paths require character variable.
     """
-    #user_choice = input("Please enter your choice here; type the number for the path you want to take:\n")
-    user_choice = input("Would you like to take path 1 or path 2?:\n")    
+    user_choice = input("Would you like to take path 1 or path 2?:\n")
+
     if user_choice == "1":
         path = "1"
     elif user_choice == "2":
@@ -108,7 +108,7 @@ def choose_path(character, current_path):
         print("Error, you have not chosen one of the options.")
         print("Please try again.\n")
         current_path(character)
-    
+
     return path
 
 
@@ -171,12 +171,11 @@ def reset_game():
 
 def path_or_bridge(character):
     """
-    Function for path path_or_bridge, 
+    Function for path path_or_bridge,
     including text variants for each character.
-    Function sets stats, then calls the main_game_play function, 
+    Function sets stats, then calls the main_game_play function,
     which in turn calls the functions for choosing a path,
-    rolling the dice, calculating the final roll
-    and determining the path taken.
+    rolling the dice, calculating the final roll and determining the path taken.
     """
     if character == "Barbarian":
         stats = Barbarian(2, -2)
@@ -191,7 +190,7 @@ def path_or_bridge(character):
     current_path = path_or_bridge
     first_path_initiate = quest_or_penny
     second_path_initiate = elf_or_friends
-    
+
     main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
 
 
@@ -338,7 +337,7 @@ def north_or_rest(character):
         stats = Sorcerer(1, -1)
 
     current_path = north_or_rest
-    first_path_initiate = attack_or_run 
+    first_path_initiate = attack_or_run
     second_path_initiate = check_inn
 
     read_file("./assets/story-files/north-or-rest.txt")
@@ -406,7 +405,7 @@ def barehanded_or_ovenmitts(character):
         read_file("./assets/story-files/barehanded-or-ovenmitts-sorcerer-attack.txt")
 
     current_path = barehanded_or_ovenmitts
-    first_path_initiate = barehanded 
+    first_path_initiate = barehanded
     second_path_initiate = ovenmitts
 
     main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
@@ -441,7 +440,7 @@ def attack_or_run(character):
         stats = Rogue(5, -1)
     else:
         stats = Sorcerer(4, -2)
-    
+
     current_path = attack_or_run
     first_path_initiate = grab_or_send
     second_path_initiate = run
