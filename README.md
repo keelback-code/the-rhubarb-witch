@@ -47,11 +47,15 @@ As the owner of the site:
 
 ### Design and UX
 
-Inspiration from shows such as (Dimenson 20)[https://www.youtube.com/watch?v=_zZxCVBi7-k] and (Polygon’s TTRPG videos)[https://www.youtube.com/watch?v=oCp_2hqguUg&t=27s].
+Inspiration for this game is taken from shows such as [Dimenson 20](https://www.youtube.com/watch?v=_zZxCVBi7-k) and [Polygon’s TTRPG videos](https://www.youtube.com/watch?v=oCp_2hqguUg&t=27s).
 
-In D&D, almost every action is accompanied by a roll of a dice, usually one with twenty sides known as a D20. There are many variables as to the success or fail of your action, not just the roll but the stats of your character, special moves and so on. This is too complicated for this short, simple game so I have pre-determined the player’s stats for each action/path based on the character classes. That information can be found [here] and is in the form of a simple + or - for each divergent path. At each path the program will roll a number between 1 and 20 and the stat will be added or taken away from the number. If it is 1-10 inclusive the move fails and the player will be sent down the opposite path, 11-20 inclusive then the move succeeds. This will hopefully make the game more dynamic than a standard choose your own adventure and allow the player to have multiple playthroughs without the same path each time.
+In D&D, almost every action is accompanied by a roll of a dice, usually one with twenty sides known as a D20. There are many variables as to the success or fail of your action, not just the roll but the stats of your character, special moves and so on. This is too intricate and complicated for this short, simple game so I have pre-determined the player’s stats for each action/path based on the character classes. That information can be found [here] and is in the form of a simple + or - for each divergent path. The stats are based on the characteristics of each character; for example a barbarian would be likely to make a bold move so that would be a positive number, but a subtle or stealthy move would be negative for a barbarian, but positive for a rogue.
 
-Text is kept relatively short so as to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice; I have noticed from my own play throughs of choose your own adventure games that there is a tendency to skip to the end if I see a block of text, which I wanted to avoid here.
+At each path the program will roll a number between 1 and 20 and the stat will be added or taken away from the number. If it is 1-10 inclusive the move fails and the player will be sent down the opposite path, 11-20 inclusive then the move succeeds. This will hopefully make the game more dynamic than a standard choose your own adventure and allow the player to have multiple playthroughs without the same path each time.
+
+It is possible, after the character stats have been taken into account, for the final roll to be below 1 or above 20. This is the same case in D&D so I have left it in. It makes the success more sweet, or makes the fail feel more harsh.
+
+Text is kept relatively short so as to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice.
 
 ### Story map and flow chart
 
@@ -79,7 +83,7 @@ Background - The site background invokes a deep dark forest, as most of the acti
 
 Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path. Conditional statement later in game to check if user has penny or not. Inventory reset when game is reset.
 
-User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project (Wizard Name Generator)[https://elyserh.github.io/wizard-name-generator/index.html].
+User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html).
 
 ### Technologies
 Languages used:
@@ -112,9 +116,11 @@ In the same 'Code' dropdown, you can opt to open the code with GitHub Desktop an
 
 ### Credits (content and media)
 Research for information on Dungeons and Dragons character class information comes from:
- - https://dungeonsdragons.fandom.com/wiki/Dungeons_and_Dragons_Wiki 
- - https://www.dndbeyond.com/
+ - [Dungeons and Dragons Fandom Wiki](https://dungeonsdragons.fandom.com/wiki/Dungeons_and_Dragons_Wiki)
+ - [D&D Beyond](https://www.dndbeyond.com/)
 
 All HTML and CSS (except the minimal amount of code where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
 
 Background image comes from [Pexels](https://www.pexels.com/)
+
+All text was written by myself.
