@@ -503,7 +503,7 @@ def send(character):
 
 def main():
     """
-    Run all program functions and initialise inventory.
+    Run all program functions.
     """
     #inventory = []
     user_name()

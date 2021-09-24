@@ -102,11 +102,19 @@ Gitpod - for editing the files
 
 
 ### Debugging and known bugs
-tbc
+
+Inventory - the inventory is a global object so that it can be accessed by all functions without being passed through every function (enough is being passed through, and it only needs to be actively used in 2 functions). When the game is reset the inventory also needs to be reset, so I have added code to the reset_game function that checks for the penny and removes it if it exists.
+I tested initialising the function in main() or early game functions but it did not work without passing it through all the functions. The above seemed to be the simplest solution.
+
+In the path functions (path_or_bridge, dangerous_or_tea etc) almost all of the game functionality is tied up in neat functions. The only thing that I could not tie up was the stats, which creates a class instance and uses that to determine the stat for the appropriate character class and path. After much work on my own and discussing this problem with my mentor, it looked like the only way around this was to refactor the whole game, placing all the paths within classes. After consideration I decided this would probably be a similar amount of code and complexity to my current approach, and kept what I currently have.
+
 ### Deployment
+
 ### Publishing
 The project was deployed using Heroku
+
 The live link is: 
+
 ### Forking and Cloning
 To save a copy of the code and work on it yourself, here are the steps for forking and cloning using Github:
 In the repository, click the 'Fork' button, which is on the top right hand side, next to 'Star'.
