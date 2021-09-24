@@ -34,7 +34,6 @@ A first time user looking to play the game:
 * I want to be able to choose a character
 * I want the instructions to be clear
 * I want the game to be engaging
-* I don’t want to wait too long between choices/paths
 
 A returning user looking to play the game again:
 * I want to be able to play the game multiple times without the same ending/path
@@ -48,7 +47,7 @@ As the owner of the site:
 
 ### Design and UX
 
-Inspiration from shows such as Dimenson 20 (link) and Polygon’s TTRPG videos (link to cyperpunk red?)
+Inspiration from shows such as (Dimenson 20)[https://www.youtube.com/watch?v=_zZxCVBi7-k] and (Polygon’s TTRPG videos)[https://www.youtube.com/watch?v=oCp_2hqguUg&t=27s].
 
 In D&D, almost every action is accompanied by a roll of a dice, usually one with twenty sides known as a D20. There are many variables as to the success or fail of your action, not just the roll but the stats of your character, special moves and so on. This is too complicated for this short, simple game so I have pre-determined the player’s stats for each action/path based on the character classes. That information can be found [here] and is in the form of a simple + or - for each divergent path. At each path the program will roll a number between 1 and 20 and the stat will be added or taken away from the number. If it is 1-10 inclusive the move fails and the player will be sent down the opposite path, 11-20 inclusive then the move succeeds. This will hopefully make the game more dynamic than a standard choose your own adventure and allow the player to have multiple playthroughs without the same path each time.
 
