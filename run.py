@@ -1,5 +1,7 @@
 import random
 
+inventory = []
+
 
 class Barbarian:
     """
@@ -156,7 +158,7 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
 def reset_game():
     """
     Function for resetting game when the end
-    of a path has been reached.
+    of a path has been reached. Also resets inventory if needed.
     """
     reset = input("Type 'r' to return to the beginning of the game.\n")
     game_reset = reset.lower()
@@ -165,6 +167,9 @@ def reset_game():
     else:
         print("Error, please try again.")
         reset_game()
+    
+    if "1 penny" in inventory:
+        inventory.remove("1 penny")
 
 
 def path_or_bridge(character):
@@ -286,8 +291,8 @@ def penny(character):
         stats = Sorcerer(3, -1)
 
     current_path = penny
-    first_path_initiate = check_inn
-    second_path_initiate = check_inn
+    first_path_initiate = yes_or_no
+    second_path_initiate = tea
 
     read_file("./assets/story-files/penny.txt")
     main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
@@ -500,7 +505,7 @@ def main():
     """
     Run all program functions and initialise inventory.
     """
-    inventory = []
+    #inventory = []
     user_name()
     character = choose_character()
     path_or_bridge(character)
