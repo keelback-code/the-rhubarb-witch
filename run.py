@@ -505,7 +505,6 @@ def main():
     """
     Run all program functions.
     """
-    #inventory = []
     user_name()
     character = choose_character()
     path_or_bridge(character)
