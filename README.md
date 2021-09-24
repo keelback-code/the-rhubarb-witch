@@ -5,8 +5,7 @@
 [User Stories](#user-stories) 
 
 [Design and UX](#design-and-ux) 
-* [Story maps](#story-maps)
-* [Colour schemes and typography](#colour-schemes-and-typography)
+* [Story map and flow chart](#story-map-and-flow-chart)
 
 [Features](#features)
 
@@ -57,24 +56,31 @@ In D&D, almost every action is accompanied by a roll of a dice, usually one with
 
 Text is kept relatively short so as to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice; I have noticed from my own play throughs of choose your own adventure games that there is a tendency to skip to the end if I see a block of text, which I wanted to avoid here.
 
-### Story maps
-
-### Colour schemes and typography
+### Story map and flow chart
 
 
-The site background invokes a deep dark forest, as most of the action takes place outside. It is neutral so as not to detract from the game.
-
-### Accessibility
-Semantic HTML and aria labels were implemented across the site (only keep this section if you have more to say, otherwise this is covered in testing section)(does this apply to heroku app??)
-
-### Features - all pages, per page
 
 
-Rolling - a countdown/number of lines between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. 
 
-Increased number of lines in terminal - 
+### Features
 
-Type to return to the beginning - at first it automatically returned, but the player was unaware the change had happened and missed the ending all together. 
+Instructions - game explained clearly and efficiently.
+
+Character choice - user given choice of 3 characters. Enough to make it interesting but not so many as to be overwhelming. Character choice is confirmed by printing same choice back to character.
+
+Text width - text does not extend the width of the page; during initial testing I discovered that it was easier to parse and pay attention to the text if it took up less width of the page. If it takes up the whole width the whole field is filled and the user is overloaded before having read anything. In a text-heavy game, I am keen to avoid this if I can.
+
+Rolling - line break between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. 
+
+Final roll - final roll is shown to the player to indicate whether they have succeeded or failed.
+
+Increased number of lines in terminal - The number of rows in the terminal has been increased from 24 to 30; this is to allow some of the longer files to display on the screen at the same time as the choices. Without these additional rolls, the user would have to manually scroll up the page in order to see what they had missed.
+
+Type 'r' to return to the beginning - require user input to return to the beginning of the game, allowing the user to fully read the current path before triggering a reset and printing the beginning text. Handles user errors such as uppercase 'R' or any other character.
+
+Background - The site background invokes a deep dark forest, as most of the action takes place outside. It is neutral so as not to detract from the game.
+
+User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project (Wizard Name Generator)[https://elyserh.github.io/wizard-name-generator/index.html].
 
 ### Technologies
 Languages used:
