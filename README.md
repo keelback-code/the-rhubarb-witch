@@ -26,7 +26,7 @@
 
 ### Purpose
 
-The Rhubarb Witch is a text-based choose your own adventure game with mechanics taken from Dungeons and Dragons. At the beginning you choose a character class: Barbarian, Bard, Rogue or Sorcerer. At each fork in the path you will roll a ‘dice’ which will determine whether you succeed or fail in taking that action. The class you chose affects the outcome of the roll, which will be further explained in the Design section of the Readme.
+The Rhubarb Witch is a text-based choose your own adventure game with Dungeons and Dragons mechanics. At the beginning you choose a character class: Barbarian, Rogue or Sorcerer. At each fork in the path the program will roll a ‘dice’ which will determine whether you succeed or fail in taking that action. The class you chose affects the outcome of the roll, which will be further explained in the Design section of the Readme.
 
 ### User Stories
 
@@ -88,14 +88,15 @@ User name - user is given a themed name at the beginning of the game. Names and 
 ### Technologies
 Languages used:
 Python 3
-HTML5 ?
-CSS ?
-Javascript ?
+HTML5
+CSS
+Javascript
 
 Frameworks, Libraries and Programs Used:
 GitHub - for hosting the site
 Heroku - for the deployment of the site
 Gitpod - for editing the files
+
 
 ### Testing 
 
@@ -106,7 +107,7 @@ Gitpod - for editing the files
 Inventory - the inventory is a global object so that it can be accessed by all functions without being passed through every function (enough is being passed through, and it only needs to be actively used in 2 functions). When the game is reset the inventory also needs to be reset, so I have added code to the reset_game function that checks for the penny and removes it if it exists.
 I tested initialising the function in main() or early game functions but it did not work without passing it through all the functions. The above seemed to be the simplest solution.
 
-In the path functions (path_or_bridge, dangerous_or_tea etc) almost all of the game functionality is tied up in neat functions. The only thing that I could not tie up was the stats, which creates a class instance and uses that to determine the stat for the appropriate character class and path. After much work on my own and discussing this problem with my mentor, it looked like the only way around this was to refactor the whole game, placing all the paths within classes. After consideration I decided this would probably be a similar amount of code and complexity to my current approach, and kept what I currently have.
+In the path functions (path_or_bridge, dangerous_or_tea etc) almost all of the game functionality is tied up in neat functions. The only thing that I could not tie up was the stats, which creates a class instance and uses that to assign the stat for the appropriate character class and path. After much work on my own and discussing this problem with my mentor, it looked like the only way around this was to refactor the whole game, placing all the paths within classes. After experimentation and consideration I decided this would probably be a similar amount of code and complexity to my current approach, and kept what I currently have.
 
 ### Deployment
 
@@ -127,8 +128,10 @@ Research for information on Dungeons and Dragons character class information com
  - [Dungeons and Dragons Fandom Wiki](https://dungeonsdragons.fandom.com/wiki/Dungeons_and_Dragons_Wiki)
  - [D&D Beyond](https://www.dndbeyond.com/)
 
-All HTML and CSS (except the minimal amount of code where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
+All HTML, CSS and Javascript (except the minimal amount of CSS where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
 
 Background image comes from [Pexels](https://www.pexels.com/)
 
-All text was written by myself.
+All story text was written by myself.
+
+Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family.
