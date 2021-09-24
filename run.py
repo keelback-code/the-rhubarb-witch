@@ -1,7 +1,5 @@
 import random
 
-inventory = []
-
 
 class Barbarian:
     """
@@ -500,8 +498,9 @@ def send(character):
 
 def main():
     """
-    Run all program functions.
+    Run all program functions and initialise inventory.
     """
+    inventory = []
     user_name()
     character = choose_character()
     path_or_bridge(character)

@@ -31,22 +31,20 @@ The Rhubarb Witch is a text-based choose your own adventure game with mechanics 
 ### User Stories
 
 A first time user looking to play the game:
-I want to be able to choose a character
-I want the game to be engaging
-I don’t want to wait too long between choices/paths
+* I want to be able to choose a character
+* I want the instructions to be clear
+* I want the game to be engaging
+* I don’t want to wait too long between choices/paths
 
 A returning user looking to play the game again:
-I want to be able to play the game multiple times without the same ending/path
-I want to be able to choose a different character
-
-A disabled user who is new or returning to the site:
-need to know more
+* I want to be able to play the game multiple times without the same ending/path
+* I want to be able to choose a different character
 
 As the owner of the site:
-I want users to be able to use the game easily and intuitively
-I want the game to be engaging
-I want what is going on to be clear to the users at all times
-I want to provide the same experience for all users - need to know more
+* I want users to be able to use the game easily and intuitively
+* I want the game to be engaging
+* I want errors to be handled efficiently
+* I want what is going on to be clear to the users at all times
 
 ### Design and UX
 
@@ -79,6 +77,8 @@ Increased number of lines in terminal - The number of rows in the terminal has b
 Type 'r' to return to the beginning - require user input to return to the beginning of the game, allowing the user to fully read the current path before triggering a reset and printing the beginning text. Handles user errors such as uppercase 'R' or any other character.
 
 Background - The site background invokes a deep dark forest, as most of the action takes place outside. It is neutral so as not to detract from the game.
+
+Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path. Conditional statement later in game to check if user has penny or not. Inventory reset when game is reset.
 
 User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project (Wizard Name Generator)[https://elyserh.github.io/wizard-name-generator/index.html].
 
