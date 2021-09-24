@@ -24,6 +24,8 @@
 
 [Credits](#credits)
 
+[Acknowledgements](#acknowledgements)
+
 ### Purpose
 
 The Rhubarb Witch is a text-based choose your own adventure game with Dungeons and Dragons mechanics. At the beginning you choose a character class: Barbarian, Rogue or Sorcerer. At each fork in the path the program will roll a ‘dice’ which will determine whether you succeed or fail in taking that action. The class you chose affects the outcome of the roll, which will be further explained in the Design section of the Readme.
@@ -135,3 +137,7 @@ Background image comes from [Pexels](https://www.pexels.com/)
 All story text was written by myself.
 
 Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family.
+
+### Acknowledgements
+
+Many thanks to my mentor Maranatha Ilesanmi for his guidance. Thnaks also to my wife Finola for her continued support and constant testing.
