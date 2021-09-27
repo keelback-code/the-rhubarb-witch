@@ -70,7 +70,9 @@ def user_name():
 
     print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
-    #error handler here
+    if user == "":
+        print("Error, please enter your name. I need sustenance.")
+        user_name()
 
 
 def read_file(current_story_file):
@@ -89,8 +91,7 @@ def main_game_play(character, stats, current_path, first_path_initiate, second_p
     call. Please refer to each function for individual purpose.
     """
     path_choice = choose_path(character, current_path)
-    #roll = dice_roll()
-    final_roll = calculate_final_roll(stats, path_choice)
+    final_roll = dice_roll(stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -110,15 +111,6 @@ def choose_path(character, current_path):
         current_path(character)
 
     return path
-
-
-#def dice_roll():
-    """
-    Dice roll and text to be used in other functions.
-    """
-    #roll = random.randrange(1, 20)
-    #print("Rolling...\n")
-    #return roll
 
 
 def dice_roll(stats, path_choice):
