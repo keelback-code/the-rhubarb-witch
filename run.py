@@ -70,6 +70,8 @@ def user_name():
 
     print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
+    #error handler here
+
 
 def read_file(current_story_file):
     """
@@ -100,10 +102,8 @@ def choose_path(character, current_path):
     """
     user_choice = input("Would you like to take path 1 or path 2?:\n")
 
-    if user_choice == "1":
-        path = "1"
-    elif user_choice == "2":
-        path = "2"
+    if user_choice == "1" or user_choice == "2":
+        path = user_choice
     else:
         print("Error, you have not chosen one of the options.")
         print("Please try again.\n")
