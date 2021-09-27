@@ -89,8 +89,8 @@ def main_game_play(character, stats, current_path, first_path_initiate, second_p
     call. Please refer to each function for individual purpose.
     """
     path_choice = choose_path(character, current_path)
-    roll = dice_roll()
-    final_roll = calculate_final_roll(roll, stats, path_choice)
+    #roll = dice_roll()
+    final_roll = calculate_final_roll(stats, path_choice)
     path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
 
 
@@ -112,20 +112,23 @@ def choose_path(character, current_path):
     return path
 
 
-def dice_roll():
+#def dice_roll():
     """
     Dice roll and text to be used in other functions.
     """
-    roll = random.randrange(1, 20)
-    print("Rolling...\n")
-    return roll
+    #roll = random.randrange(1, 20)
+    #print("Rolling...\n")
+    #return roll
 
 
-def calculate_final_roll(roll, stats, path_choice):
+def dice_roll(stats, path_choice):
     """
-    Function to determine which stats to use and add
+    Function to roll, determine which stats to use and add
     it to the roll.
     """
+    roll = random.randrange(1, 20)
+    print("Rolling...\n")
+
     if path_choice == "1":
         final_roll = stats.path_one + roll
     elif path_choice == "2":
