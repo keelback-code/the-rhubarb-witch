@@ -51,7 +51,7 @@ def choose_character():
         user_character = "Sorcerer"
     else:
         print(Fore.CYAN + Style.BRIGHT + "Error, you have not chosen one of the available characters.")
-        print("Please try again.\n")
+        print(Fore.CYAN + Style.BRIGHT + "The witch is displeased. Please try again.\n")
         main()
 
     print(Fore.MAGENTA + Style.BRIGHT + f"You have chosen {user_character}\n")
@@ -67,7 +67,7 @@ def user_name():
     game_last_names = ["The Night Bringer", "The Day Waker", "The Garrulous", "Of The Adler Groves", "Of The Deep Forests", "Of The Underbrush", "Of The Deep Places", "Of The Dark Dank", "The Eldest", "The Elder", "The Young", "The Middle", "The Last", "The Wizened", "The Feeble", "The Feral", "The Knotty", "The Friable", "Of Horndown", "The Wet", "The Moist", "The Cantankerous", "The Dulcet", "The Ghastly", "Of The Long Spindle", "Of The Dells", "Of Widow's Peak", "Of Glendale, CA", "The Long of Neck, Humped of Back", "The Wyrd", "The Not-Terrible", "The Amazing Fantastic Excellent Very Good", "The Intergalactic", "The Nefarious", "The Relentless", "The Cryptic", "The Luminuous", "The Shimmerer", "The Mathemagician", "The Ordinary", "Devourer Of Nibbles", "The Betrayer", "The Unassuming", "Of Many Hats", "Hoarder of Shiny Things", "The Most Stinky", "Of The Pub Around The Corner", "The Extravagant", "The Perpetually Miffed", "The Vile", "The Sneaky", "Who Flees Before Small Canines", "Liberator of Cockroaches", "The Snarky", "The Smug", "Who You've Probably Never Heard Of But I'm Really Super Famous In Flurgleburg, I Swear", "Weaver of Despair and Baskets", "Of Chains", "Of The Sun", "The Tight Lipped", "Master of Destruction", "Tamer Of Things That Need Taming", "Eater of Peanuts", "The Sparkly", "The Engulfed", "Of Lasers", "Fire-eater", "Master of Various Liquids", "Earthen Fist", "The Light", "Of Fanciness", "The Fancy", "The Forgetful", "Of The Fairies", "Of The Merpeople", "Cyclops Slayer", "User of Tiny Things", "The Perpetually Sleepy", "The Saboteur"]
 
     print(Fore.MAGENTA + Style.BRIGHT + "Welcome to 'The Rhubarb Witch'!\n")
-    user = input("Please input your name and I will lend you a new one for the game.\n")
+    user = input("Please input your name and hit enter, then I will lend you a new name for the game.\n")
     user_last_name = random.choice(game_last_names)
     user_final_name = user + " " + user_last_name
 
@@ -110,7 +110,7 @@ def choose_path(character, current_path):
         path = user_choice
     else:
         print(Fore.CYAN + Style.BRIGHT + "Error, you have not chosen one of the options.")
-        print("Please try again.\n")
+        print(Fore.CYAN + Style.BRIGHT + "The witch is displeased. Please try again.\n")
         current_path(character)
 
     return path
@@ -129,7 +129,7 @@ def dice_roll(stats, path_choice):
     elif path_choice == "2":
         final_roll = stats.path_two + roll
 
-    print(Fore.MAGENTA + Style.BRIGHT + f"You have rolled {final_roll}!\n")
+    print(Fore.BLUE + Style.BRIGHT + f"You have rolled {final_roll}!\n")
 
     return final_roll
 
@@ -163,7 +163,7 @@ def reset_game():
     if game_reset == "r":
         main()
     else:
-        print(Fore.CYAN + Style.BRIGHT + "Error, please try again.")
+        print(Fore.CYAN + Style.BRIGHT + "Error, please try again. The witch does not abide sloppy typing.")
         reset_game()
     
     if "1 penny" in inventory:
