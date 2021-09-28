@@ -221,7 +221,6 @@ def elf(character):
     """
     read_file("./assets/story-files/elf.txt")
     read_file("./assets/story-files/game-over.txt")
-    current_path = elf
     reset_game()
 
 
@@ -231,7 +230,6 @@ def friends(character):
     without rolling.
     """
     read_file("./assets/story-files/friends.txt")
-    current_path = friends
     quest_or_penny(character)
 
 
@@ -322,7 +320,6 @@ def tea(character):
     Function for path tea, which resets game.
     """
     read_file("./assets/story-files/tea.txt")
-    current_path = tea
     reset_game()
 
 
@@ -352,7 +349,6 @@ def check_inn(character):
     the item in path penny and takes the relevant path forward.
     """
     read_file("./assets/story-files/check-inn.txt")
-    current_path = check_inn
 
     if "1 penny" in inventory:
         print("You have the penny from the witch; continue onwards.\n")
@@ -387,7 +383,6 @@ def flamethrower(character):
     Function for path flamethrower, which resets game.
     """
     read_file("./assets/story-files/flamethrower.txt")
-    current_path = flamethrower
     reset_game()
 
 
@@ -418,7 +413,6 @@ def barehanded(character):
     Function for path barehanded, which resets game.
     """
     read_file("./assets/story-files/barehanded.txt")
-    current_path = barehanded
     reset_game()
 
 
@@ -427,7 +421,6 @@ def ovenmitts(character):
     Function for path ovenmitts, which is a winning path and resets the game.
     """
     read_file("./assets/story-files/ovenmitts-end.txt")
-    current_path = ovenmitts
     reset_game()
 
 
@@ -478,7 +471,6 @@ def run(character):
     Function for path run, which resets game.
     """
     read_file("./assets/story-files/run.txt")
-    current_path = run
     reset_game()
 
 
@@ -487,7 +479,6 @@ def grab(character):
     Function for path grab, which is a winning path and resets the game.
     """
     read_file("./assets/story-files/grab-end.txt")
-    current_path = grab
     reset_game()
 
 
@@ -496,7 +487,6 @@ def send(character):
     Function for path send, which resets game.
     """
     read_file("./assets/story-files/send.txt")
-    current_path = send
     reset_game()
 
 
