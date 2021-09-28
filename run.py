@@ -129,7 +129,7 @@ def dice_roll(stats, path_choice):
     elif path_choice == "2":
         final_roll = stats.path_two + roll
 
-    print(Fore.BLUE + Style.BRIGHT + f"You have rolled {final_roll}!\n")
+    print(Fore.GREEN + Style.BRIGHT + f"You have rolled {final_roll}!\n")
 
     return final_roll
 
@@ -320,6 +320,7 @@ def tea(character):
     Function for path tea, which resets game.
     """
     read_file("./assets/story-files/tea.txt")
+    read_file("./assets/story-files/game-over-lasagne.txt")
     reset_game()
 
 
@@ -383,6 +384,7 @@ def flamethrower(character):
     Function for path flamethrower, which resets game.
     """
     read_file("./assets/story-files/flamethrower.txt")
+    read_file("./assets/story-files/game-over.txt")
     reset_game()
 
 
@@ -413,6 +415,7 @@ def barehanded(character):
     Function for path barehanded, which resets game.
     """
     read_file("./assets/story-files/barehanded.txt")
+    read_file("./assets/story-files/game-over.txt")
     reset_game()
 
 
@@ -421,6 +424,7 @@ def ovenmitts(character):
     Function for path ovenmitts, which is a winning path and resets the game.
     """
     read_file("./assets/story-files/ovenmitts-end.txt")
+    read_file("./assets/story-files/you-win.txt")
     reset_game()
 
 
@@ -471,6 +475,7 @@ def run(character):
     Function for path run, which resets game.
     """
     read_file("./assets/story-files/run.txt")
+    read_file("./assets/story-files/game-over.txt")
     reset_game()
 
 
@@ -479,6 +484,7 @@ def grab(character):
     Function for path grab, which is a winning path and resets the game.
     """
     read_file("./assets/story-files/grab-end.txt")
+    read_file("./assets/story-files/you-win.txt")
     reset_game()
 
 
@@ -487,6 +493,7 @@ def send(character):
     Function for path send, which resets game.
     """
     read_file("./assets/story-files/send.txt")
+    read_file("./assets/story-files/game-over.txt")
     reset_game()
 
 
