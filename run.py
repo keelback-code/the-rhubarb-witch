@@ -130,9 +130,7 @@ def dice_roll(stats, path_choice):
     elif path_choice == "2":
         final_roll = stats.path_two + roll
 
-    print(Fore.GREEN + Style.BRIGHT + f"You have rolled {final_roll}!\n")
-
-    if final_roll >=11:
+    if final_roll >= 11:
         print(Fore.GREEN + Style.BRIGHT + f"You have rolled {final_roll}!\n")
     else:
         print(Fore.RED + Style.BRIGHT + f"You have rolled {final_roll}!\n")
