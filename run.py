@@ -50,11 +50,11 @@ def choose_character():
     elif user_choice == "3":
         user_character = "Sorcerer"
     else:
-        print("Error, you have not chosen one of the available characters.")
+        print(Fore.CYAN + "Error, you have not chosen one of the available characters.")
         print("Please try again.\n")
         main()
 
-    print(f"You have chosen {user_character}\n")
+    print(Fore.MAGENTA + f"You have chosen {user_character}\n")
 
     return user_character
 
@@ -66,7 +66,7 @@ def user_name():
     """
     game_last_names = ["The Night Bringer", "The Day Waker", "The Garrulous", "Of The Adler Groves", "Of The Deep Forests", "Of The Underbrush", "Of The Deep Places", "Of The Dark Dank", "The Eldest", "The Elder", "The Young", "The Middle", "The Last", "The Wizened", "The Feeble", "The Feral", "The Knotty", "The Friable", "Of Horndown", "The Wet", "The Moist", "The Cantankerous", "The Dulcet", "The Ghastly", "Of The Long Spindle", "Of The Dells", "Of Widow's Peak", "Of Glendale, CA", "The Long of Neck, Humped of Back", "The Wyrd", "The Not-Terrible", "The Amazing Fantastic Excellent Very Good", "The Intergalactic", "The Nefarious", "The Relentless", "The Cryptic", "The Luminuous", "The Shimmerer", "The Mathemagician", "The Ordinary", "Devourer Of Nibbles", "The Betrayer", "The Unassuming", "Of Many Hats", "Hoarder of Shiny Things", "The Most Stinky", "Of The Pub Around The Corner", "The Extravagant", "The Perpetually Miffed", "The Vile", "The Sneaky", "Who Flees Before Small Canines", "Liberator of Cockroaches", "The Snarky", "The Smug", "Who You've Probably Never Heard Of But I'm Really Super Famous In Flurgleburg, I Swear", "Weaver of Despair and Baskets", "Of Chains", "Of The Sun", "The Tight Lipped", "Master of Destruction", "Tamer Of Things That Need Taming", "Eater of Peanuts", "The Sparkly", "The Engulfed", "Of Lasers", "Fire-eater", "Master of Various Liquids", "Earthen Fist", "The Light", "Of Fanciness", "The Fancy", "The Forgetful", "Of The Fairies", "Of The Merpeople", "Cyclops Slayer", "User of Tiny Things", "The Perpetually Sleepy", "The Saboteur"]
 
-    print(Fore.BLACK + Back.MAGENTA + "Welcome to 'The Rhubarb Witch'!\n")
+    print(Fore.MAGENTA + "Welcome to 'The Rhubarb Witch'!\n")
     user = input("Please input your name and I will lend you a new one for the game.\n")
     user_last_name = random.choice(game_last_names)
     user_final_name = user + " " + user_last_name
@@ -74,7 +74,7 @@ def user_name():
     print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
     if user == "":
-        print("Error, please enter your name. I need sustenance.")
+        print(Fore.CYAN + "Error, please enter your name. I need sustenance.")
         user_name()
 
 
@@ -109,7 +109,7 @@ def choose_path(character, current_path):
     if user_choice == "1" or user_choice == "2":
         path = user_choice
     else:
-        print("Error, you have not chosen one of the options.")
+        print(Fore.CYAN + "Error, you have not chosen one of the options.")
         print("Please try again.\n")
         current_path(character)
 
@@ -122,14 +122,14 @@ def dice_roll(stats, path_choice):
     it to the roll.
     """
     roll = random.randrange(1, 20)
-    print("Rolling...\n")
+    print(Fore.YELLOW + "Rolling...\n")
 
     if path_choice == "1":
         final_roll = stats.path_one + roll
     elif path_choice == "2":
         final_roll = stats.path_two + roll
 
-    print(f"You have rolled {final_roll}!\n")
+    print(Fore.GREEN + f"You have rolled {final_roll}!\n")
 
     return final_roll
 
@@ -140,16 +140,16 @@ def path_divergence(character, final_roll, path_choice, first_path_initiate, sec
     after dice rolls, to be fed back into main path functions.
     """
     if final_roll >= 11 and path_choice == "1":
-        print("Your roll succeeds! Forge ahead.\n")
+        print(Fore.GREEN + "Your roll succeeds! Forge ahead.\n")
         first_path_initiate(character)
     elif final_roll >= 11 and path_choice == "2":
-        print("Success! Head onwards.\n")
+        print(Fore.GREEN + "Success! Head onwards.\n")
         second_path_initiate(character)
     elif final_roll <= 10 and path_choice == "1":
-        print("You fail. Time to head the other way.\n")
+        print(Fore.RED + "You fail. Time to head the other way.\n")
         second_path_initiate(character)
     else:
-        print("You failed. Big time. Gonna send you the other way.\n")
+        print(Fore.RED + "You failed. Big time. Gonna send you the other way.\n")
         first_path_initiate(character)
 
 
@@ -158,12 +158,12 @@ def reset_game():
     Function for resetting game when the end
     of a path has been reached. Also resets inventory if needed.
     """
-    reset = input("Type 'r' to return to the beginning of the game.\n")
+    reset = input(Fore.MAGENTA + "Type 'r' to return to the beginning of the game.\n")
     game_reset = reset.lower()
     if game_reset == "r":
         main()
     else:
-        print("Error, please try again.")
+        print(Fore.CYAN + "Error, please try again.")
         reset_game()
     
     if "1 penny" in inventory:

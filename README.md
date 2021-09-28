@@ -73,7 +73,7 @@ Character choice - user given choice of 3 characters. Enough to make it interest
 
 Text width - text does not extend the width of the page; during initial testing I discovered that it was easier to parse and pay attention to the text if it took up less width of the page. If it takes up the whole width the whole field is filled and the user is overloaded before having read anything. In a text-heavy game, I am keen to avoid this if I can.
 
-Rolling - line break between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. 
+Rolling - line break between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. yellow for rolling (in progress) and green for go
 
 Final roll - final roll is shown to the player to indicate whether they have succeeded or failed.
 
