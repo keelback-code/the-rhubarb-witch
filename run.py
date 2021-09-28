@@ -350,6 +350,7 @@ def check_inn(character):
     the item in path penny and takes the relevant path forward.
     """
     read_file("./assets/story-files/check-inn.txt")
+    print(Fore.YELLOW + Style.BRIGHT + "Checking inventory...\n")
 
     if "1 penny" in inventory:
         print(Fore.GREEN + Style.BRIGHT + "You have the penny from the witch; continue onwards.\n")

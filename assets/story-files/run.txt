@@ -2,5 +2,3 @@ You run away with great speed and end up back at the inn.
 The innkeeper turns on the tv to a report from up north; 
 three intrepid adventurers have been burnt to a crisp by a local dragon. 
 You slink out the back door and return home. 
-
-Game Over.
