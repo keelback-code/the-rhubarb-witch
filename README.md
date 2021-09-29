@@ -30,6 +30,9 @@
 
 The Rhubarb Witch is a text-based choose your own adventure game with Dungeons and Dragons mechanics. At the beginning you choose a character class: Barbarian, Rogue or Sorcerer. At each fork in the path the program will roll a ‘dice’ which will determine whether you succeed or fail in taking that action. The class you chose affects the outcome of the roll, which will be further explained in the Design section of the Readme.
 
+Live link:
+[The Rhubarb Witch](https://the-rhubarb-witch.herokuapp.com/)
+
 ### User Stories
 
 A first time user looking to play the game:
@@ -119,13 +122,28 @@ In the path functions (path_or_bridge, dangerous_or_tea etc) almost all of the g
 ### Deployment
 
 ### Publishing
-The project was deployed using Heroku.
+The project was deployed using Heroku. The process is as follows:
 
-The singular config var needed is PORT 8000
+Once you have signed up to Heroku, on the top right of the dashboard there is a button labelled 'New'. This will open a dropdown; please select 'Create new app'. On the next page you can choose your region and a name for the project. Then click 'Create app'.
 
-For the Colorama library, the requirements.txt file needs to have colorama==0.4.4 saved. Before the next push, enter 'pip3 freeze > requirements.txt'. If you add any libraries please make sure to add the requirements and enter this command again, along with any config vars if you need them. Colorama does not need any config vars.
+On the next page there is a menu along the top. Navigate to 'Settings', where you will find the config vars. Scroll down to the section named 'Config vars' and click on the button labelled 'Reveal config vars'.
 
-The live link is: 
+For the current iteration of this program, the singular config var needed is PORT 8000. Please enter the key as 'PORT' and the value as '8000', then hit 'Add'.
+
+Just underneath 'Config vars' you should see 'Buildpacks'. Here you can add Python and Node.js scripts to the environment. Click on 'Add buildpack' and a menu with multiple buildpacks will open.
+
+The order is very important. Please add Python first, by clicking on the Python button and then selecting 'Save changes'. Then go back into the 'Add buildpack' menu and select 'Node.js', and save your changes.
+
+If you scroll back to the top of the page you will find the 'Deploy' tab, which has multiple options for deployment. I used Github for this project. When you click on the Github button a bar will come up for you to search for the repo you wish to connect to.
+
+Once you have connected, you have the option to deploy automatically (the app will update every time you push) or manually (update only when you choose). I chose automatic but you can do what suits you.
+
+After the first push/update, your app will be ready to go!
+
+For the Colorama library, the requirements.txt file needs to have colorama==0.4.4 saved. Before the next push, enter 'pip3 freeze > requirements.txt'. If you add any libraries please make sure to add the requirements to the requirements.txt file and enter this command again, along with any config vars if you need them. Colorama does not need any config vars.
+
+The live link is:
+[The Rhubarb Witch](https://the-rhubarb-witch.herokuapp.com/)
 
 ### Forking and Cloning
 To save a copy of the code and work on it yourself, here are the steps for forking and cloning using Github:
