@@ -103,6 +103,8 @@ Gitpod - for editing the files
 ### Testing 
 
 
+Many of the people testing the game reported that they ended up at the 'tea' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both at the beginning at the game I don't want the players to get frustrated at dying too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
+
 
 ### Debugging and known bugs
 

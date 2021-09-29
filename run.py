@@ -263,11 +263,11 @@ def dangerous_or_tea(character):
     and assigns paths.
     """
     if character == "Barbarian":
-        stats = Barbarian(3, -1)
+        stats = Barbarian(3, -2)
     elif character == "Rogue":
-        stats = Barbarian(3, 1)
-    else:
         stats = Barbarian(3, -1)
+    else:
+        stats = Barbarian(3, -3)
 
     current_path = dangerous_or_tea
     first_path_initiate = yes_or_no
