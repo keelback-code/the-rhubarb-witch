@@ -98,6 +98,8 @@ Frameworks, Libraries and Programs Used:
 GitHub - for hosting the site
 Heroku - for the deployment of the site
 Gitpod - for editing the files
+[TAAG](http://www.patorjk.com/software/taag/) - for the ASCII text
+[Colorama](https://pypi.org/project/colorama/) - for the coloured text
 
 
 ### Testing 
@@ -110,13 +112,18 @@ Many of the people testing the game reported that they ended up at the 'tea' end
 
 Inventory - the inventory is a global object so that it can be accessed by all functions without being passed through every function (enough is being passed through, and it only needs to be actively used in 2 functions). When the game is reset the inventory also needs to be reset, so I have added code to the reset_game function that checks for the penny and removes it if it exists.
 I tested initialising the function in main() or early game functions but it did not work without passing it through all the functions. The above seemed to be the simplest solution.
+Originally I was trying to pass the penny through to the check_inn function as a value, which wouldn't work without being passed to more functions as mentioned, but eventually realised that I was trying to make things too complicated and it is literally an object just like real life, that needs to be kept in a 'bag', in this case a list, that I can take it in and out of when needed.
 
 In the path functions (path_or_bridge, dangerous_or_tea etc) almost all of the game functionality is tied up in neat functions. The only thing that I could not tie up was the stats, which creates a class instance and uses that to assign the stat for the appropriate character class and path. After much work on my own and discussing this problem with my mentor, it looked like the only way around this was to refactor the whole game, placing all the paths within classes. After experimentation and consideration I decided this would probably be a similar amount of code and complexity to my current approach, and kept what I currently have.
 
 ### Deployment
 
 ### Publishing
-The project was deployed using Heroku
+The project was deployed using Heroku.
+
+The singular config var needed is PORT 8000
+
+For the Colorama library, the requirements.txt file needs to have colorama==0.4.4 saved. Before the next push, enter 'pip3 freeze > requirements.txt'. If you add any libraries please make sure to add the requirements and enter this command again, along with any config vars if you need them. Colorama does not need any config vars.
 
 The live link is: 
 
@@ -137,6 +144,8 @@ All HTML, CSS and Javascript (except the minimal amount of CSS where marked) is 
 Background image comes from [Pexels](https://www.pexels.com/)
 
 All story text was written by myself.
+
+ASCII art text for 'Gave over' and 'You win' screens generated on [TAAG](http://www.patorjk.com/software/taag/).
 
 Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family.
 
