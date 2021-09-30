@@ -1,5 +1,4 @@
 Instructions:
-
 This is a choose your own adventure game; please pick a character 
 to play with. Be mindful who you choose, it will affect the outcome 
 of your choices! Each time you have to make a decision, I will roll 
