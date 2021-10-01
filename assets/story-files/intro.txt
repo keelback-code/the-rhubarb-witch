@@ -2,7 +2,7 @@ Instructions:
 This is a choose your own adventure game; please pick a character 
 to play with. Be mindful who you choose, it will affect the outcome 
 of your choices! Each time you have to make a decision, I will roll 
-a dice to see whether you succeed or fail, so choose carefully! 
+the dice to see whether you succeed or fail, so choose carefully! 
 If you roll above 10 you can go your chosen way, if you roll 
 below 10 then I will send you on the other path.
 

@@ -64,6 +64,8 @@ It is possible, after the character stats have been taken into account, for the 
 
 Text is kept relatively short so as to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice.
 
+The colors are all set to 'bright' as the standard Python colours are a little dim in the HTML terminal.
+
 ### Story map and flow chart
 
 Due to spending a week with limited internet, I ended up planning this project before starting the Love Sandwiches walkthrough and learning what a flow chart is. When writing out the story and the paths of the story I ended up with an accidental flow chart but it is in the format of a word document, which can be found below, along with photos of the handwritten version.
@@ -78,7 +80,7 @@ Due to spending a week with limited internet, I ended up planning this project b
 
 Introduction - welcome text in magenta to mirror the colour of rhubarb
 
-User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html). Includes error handler if no name is entered.
+User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html). This is the first time the user is asked for input so I have included instructions to 'hit enter' as it is not immediately obvious to every player. It also sets the player up to do the same for each following input without further instruction. Includes error handler if no name is entered.
 
 Instructions - game explained clearly and efficiently, with header to distinguish it from the rest of the text on screen.
 
@@ -106,27 +108,33 @@ Background - The site background is dark green and the 'Run Program' button is p
 
 Cyan error messages - I have deliberately made my error messages cyan; the colour is eye-catching enough to draw the user's attention and communicate that an action needs to take place, without being alarming. It's not an urgent situation so there's no need to use the harsh red for an accidental user error.
 
-
-
-
-
 ### Technologies
+
 Languages used:
+
 Python 3
+
 HTML5
+
 CSS
+
 Javascript
 
 Frameworks, Libraries and Programs Used:
+
 GitHub - for hosting the site
+
 Heroku - for the deployment of the site
+
 Gitpod - for editing the files
+
 [TAAG](http://www.patorjk.com/software/taag/) - for the ASCII text
+
 [Colorama](https://pypi.org/project/colorama/) - for the coloured text
 
 ### Testing 
 
-Many of the people testing the game reported that they ended up at the 'tea' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both at the beginning at the game I don't want the players to get frustrated at dying too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
+Many of the people testing the game reported that they ended up at the 'tea' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both towards the beginning at the game I don't want the players to get frustrated at dying/ending too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
 
 
 ### Debugging and known bugs
@@ -164,6 +172,7 @@ The live link is:
 [The Rhubarb Witch](https://the-rhubarb-witch.herokuapp.com/)
 
 ### Forking and Cloning
+ 
 To save a copy of the code and work on it yourself, here are the steps for forking and cloning using Github:
 
 In the repository, click the 'Fork' button, which is on the top right hand side, next to 'Star'.
@@ -175,6 +184,7 @@ Within the repository, click the 'Code' dropdown, which is located next to 'Add 
 In the same 'Code' dropdown, you can opt to open the code with GitHub Desktop and work from there.
 
 ### Credits (content and media)
+
 Research for information on Dungeons and Dragons character class information comes from:
  - [Dungeons and Dragons Fandom Wiki](https://dungeonsdragons.fandom.com/wiki/Dungeons_and_Dragons_Wiki)
  - [D&D Beyond](https://www.dndbeyond.com/)

@@ -69,14 +69,14 @@ def user_name():
     print(Fore.MAGENTA + Style.BRIGHT + "Welcome to 'The Rhubarb Witch'!\n")
     print("Please input your name and hit enter,")
     user = input("then I will lend you a new name for the game.\n")
-    user_last_name = random.choice(game_last_names)
-    user_final_name = user + " " + user_last_name
-
-    print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
     if user == "":
         print(Fore.CYAN + Style.BRIGHT + "Error, please enter your name. The witch needs sustenance.")
         user_name()
+    else:
+        user_last_name = random.choice(game_last_names)
+        user_final_name = user + " " + user_last_name
+        print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
 
 
 def read_file(current_story_file):
@@ -89,14 +89,14 @@ def read_file(current_story_file):
         print(file_text)
 
 
-def main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate):
+def main_game_play(character, stats, current_path, first_path, second_path):
     """
     Function containing functions which most pathways
     call. Please refer to each function for individual purpose.
     """
     path_choice = choose_path(character, current_path)
     final_roll = dice_roll(stats, path_choice)
-    path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate)
+    path_divergence(character, final_roll, path_choice, first_path, second_path)
 
 
 def choose_path(character, current_path):
@@ -138,23 +138,23 @@ def dice_roll(stats, path_choice):
     return final_roll
 
 
-def path_divergence(character, final_roll, path_choice, first_path_initiate, second_path_initiate):
+def path_divergence(character, final_roll, path_choice, first_path, second_path):
     """
     Function for determining which path will be taken
     after dice rolls, to be fed back into main path functions.
     """
     if final_roll >= 11 and path_choice == "1":
         print(Fore.GREEN + Style.BRIGHT + "Your roll succeeds! Forge ahead.\n")
-        first_path_initiate(character)
+        first_path(character)
     elif final_roll >= 11 and path_choice == "2":
         print(Fore.GREEN + Style.BRIGHT + "Success! Head onwards.\n")
-        second_path_initiate(character)
+        second_path(character)
     elif final_roll <= 10 and path_choice == "1":
         print(Fore.RED + Style.BRIGHT + "You fail. Time to head the other way.\n")
-        second_path_initiate(character)
+        second_path(character)
     else:
         print(Fore.RED + Style.BRIGHT + "You failed. Big time. Gonna send you the other way.\n")
-        first_path_initiate(character)
+        first_path(character)
 
 
 def reset_game():
@@ -179,8 +179,8 @@ def path_or_bridge(character):
     Function for path path_or_bridge,
     including text variants for each character.
     Function sets stats, then calls the main_game_play function,
-    which in turn calls the functions for choosing a path,
-    rolling the dice, calculating the final roll and determining the path taken.
+    which in turn calls the functions for choosing a path, rolling
+    the dice, calculating the final roll and determining the path taken.
     """
     if character == "Barbarian":
         stats = Barbarian(2, -2)
@@ -193,10 +193,10 @@ def path_or_bridge(character):
         read_file("./assets/story-files/path-or-bridge-sorcerer.txt")
 
     current_path = path_or_bridge
-    first_path_initiate = quest_or_penny
-    second_path_initiate = elf_or_friends
+    first_path = quest_or_penny
+    second_path = elf_or_friends
 
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def elf_or_friends(character):
@@ -212,11 +212,11 @@ def elf_or_friends(character):
         stats = Sorcerer(-3, 2)
 
     current_path = elf_or_friends
-    first_path_initiate = elf
-    second_path_initiate = friends
+    first_path = elf
+    second_path = friends
 
     read_file("./assets/story-files/elf-or-friends.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def elf(character):
@@ -250,11 +250,11 @@ def quest_or_penny(character):
         stats = Sorcerer(-4, 2)
 
     current_path = quest_or_penny
-    first_path_initiate = dangerous_or_tea
-    second_path_initiate = penny
+    first_path = dangerous_or_tea
+    second_path = penny
 
     read_file("./assets/story-files/quest-or-penny.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def dangerous_or_tea(character):
@@ -270,11 +270,11 @@ def dangerous_or_tea(character):
         stats = Barbarian(3, -3)
 
     current_path = dangerous_or_tea
-    first_path_initiate = yes_or_no
-    second_path_initiate = tea
+    first_path = yes_or_no
+    second_path = tea
 
     read_file("./assets/story-files/dangerous-or-tea.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def penny(character):
@@ -292,11 +292,11 @@ def penny(character):
         stats = Sorcerer(3, -1)
 
     current_path = penny
-    first_path_initiate = yes_or_no
-    second_path_initiate = tea
+    first_path = yes_or_no
+    second_path = tea
 
     read_file("./assets/story-files/penny.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def yes_or_no(character):
@@ -312,11 +312,11 @@ def yes_or_no(character):
         stats = Sorcerer(1, -1)
 
     current_path = yes_or_no
-    first_path_initiate = north_or_rest
-    second_path_initiate = tea
+    first_path = north_or_rest
+    second_path = tea
 
     read_file("./assets/story-files/yes-or-no.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def tea(character):
@@ -341,11 +341,11 @@ def north_or_rest(character):
         stats = Sorcerer(1, -1)
 
     current_path = north_or_rest
-    first_path_initiate = attack_or_run
-    second_path_initiate = check_inn
+    first_path = attack_or_run
+    second_path = check_inn
 
     read_file("./assets/story-files/north-or-rest.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def check_inn(character):
@@ -377,11 +377,11 @@ def sword_or_flamethrower(character):
         stats = Sorcerer(6, -2)
 
     current_path = sword_or_flamethrower
-    first_path_initiate = barehanded_or_ovenmitts
-    second_path_initiate = flamethrower
+    first_path = barehanded_or_ovenmitts
+    second_path = flamethrower
 
     read_file("./assets/story-files/sword-or-flamethrower.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def flamethrower(character):
@@ -409,10 +409,10 @@ def barehanded_or_ovenmitts(character):
         read_file("./assets/story-files/barehanded-or-ovenmitts-sorcerer-attack.txt")
 
     current_path = barehanded_or_ovenmitts
-    first_path_initiate = barehanded
-    second_path_initiate = ovenmitts
+    first_path = barehanded
+    second_path = ovenmitts
 
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def barehanded(character):
@@ -446,11 +446,11 @@ def attack_or_run(character):
         stats = Sorcerer(4, -2)
 
     current_path = attack_or_run
-    first_path_initiate = grab_or_send
-    second_path_initiate = run
+    first_path = grab_or_send
+    second_path = run
 
     read_file("./assets/story-files/attack-or-run.txt")
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def grab_or_send(character):
@@ -469,10 +469,10 @@ def grab_or_send(character):
         read_file("./assets/story-files/grab-or-send-sorcerer-attack.txt")
 
     current_path = grab_or_send
-    first_path_initiate = grab
-    second_path_initiate = send
+    first_path = grab
+    second_path = send
 
-    main_game_play(character, stats, current_path, first_path_initiate, second_path_initiate)
+    main_game_play(character, stats, current_path, first_path, second_path)
 
 
 def run(character):
