@@ -96,7 +96,7 @@ Final roll - final roll is shown to the player to indicate whether they have suc
 
 End screens - path endings have ascii art to differentiate them from path choice screens; 3 possible options as below. The win screen is especially important so as to give to user a sense of achievement.
 
-Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path (function 'penny'). Conditional statement later in game to check if user has penny or not. Inventory reset when game is reset.
+Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path (function 'penny'). Conditional statement later in game to check if user has penny or not. Red and green text will also be utilised here. Inventory reset when game is reset.
 
 Increased number of lines in terminal - The number of rows in the terminal has been increased from 24 to 30; this is to allow some of the longer files, such as the intro, to display on the screen at the same time as the choices. Without these additional rows, the user would have to manually scroll up the page in order to see what they had missed.
 
@@ -106,7 +106,7 @@ Type 'r' to return to the beginning - require user input to return to the beginn
 
 Background - The site background is dark green and the 'Run Program' button is pink, to mimick the colour of rhubarb. It is neutral so as not to detract from the game.
 
-Cyan error messages - I have deliberately made my error messages cyan; the colour is eye-catching enough to draw the user's attention and communicate that an action needs to take place, without being alarming. It's not an urgent situation so there's no need to use the harsh red for an accidental user error.
+Cyan error messages - I have deliberately made my error messages cyan; the colour is eye-catching enough to draw the user's attention and communicate that an action needs to take place, without being alarming. It's not an urgent situation so there's no need to use the harsh red for an accidental user error. Screenshots in individual sections above.
 
 ### Technologies
 
