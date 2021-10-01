@@ -78,33 +78,85 @@ Due to spending a week with limited internet, I ended up planning this project b
 
 ### Features
 
-Introduction - welcome text in magenta to mirror the colour of rhubarb
+Introduction - welcome text in magenta to mirror the colour of rhubarb.
+
+![Welcome text](assets/readme-files/images/welcome-text.jpg)
 
 User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html). This is the first time the user is asked for input so I have included instructions to 'hit enter' as it is not immediately obvious to every player. It also sets the player up to do the same for each following input without further instruction. Includes error handler if no name is entered.
 
+![User name one](assets/readme-files/images/user-name-one.jpg)
+
+![User name error](assets/readme-files/images/user-name-two.jpg)
+
 Instructions - game explained clearly and efficiently, with header to distinguish it from the rest of the text on screen.
+
+![Instructions](assets/readme-files/images/instructions.jpg)
 
 Character choice - user given choice of 3 characters. Enough to make it interesting but not so many as to be overwhelming. Character choice is confirmed by printing same choice back to character. Includes error handler.
 
+![Character options](assets/readme-files/images/character-options.jpg)
+
+![Character selection](assets/readme-files/images/character-selection.jpg)
+
+![Character error](assets/readme-files/images/character-error.jpg)
+
 Text width - text does not extend the width of the page; during initial testing I discovered that it was easier to parse and pay attention to the text if it took up less width of the page. If it takes up the full width the whole field is filled and the user is overloaded before having read anything. In a text-heavy game, I am keen to avoid this if I can.
+
+![Text width](assets/readme-files/images/text-width.jpg)
 
 Path choice - user given choice of path, which includes error handler.
 
+![Path choice](assets/readme-files/images/path-choice.jpg)
+
+![Path choice error](assets/readme-files/images/path-choice-error.jpg)
+
 Rolling - line break between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. The text is coloured yellow to show that a roll is in progress, not yet red (fail) and not yet green (success).
 
-Final roll - final roll is shown to the player to indicate whether they have succeeded or failed. The success or fail message and the final roll number will be shown in red (fail) or green (success) to heighten the user's connection to the roll. These colours will hopefully elicit an emotional response that engages the player in the game.
+![Roll](assets/readme-files/images/rolling.jpg)
+
+Final roll - final roll is shown to the player to indicate whether they have succeeded or failed. The success or fail message and the final roll number will be shown in red (fail) or green (success) to heighten the user's connection to the roll. These colours will hopefully elicit an emotional response that engages the player in the game. There are 2 text variants for each, each stating whether you succeed or fail, and whether you are going on your own path or the other path.
+
+![Final roll success](assets/readme-files/images/final-roll-success.jpg)
+
+![Final roll fail](assets/readme-files/images/final-roll-fail.jpg)
 
 End screens - path endings have ascii art to differentiate them from path choice screens; 3 possible options as below. The win screen is especially important so as to give to user a sense of achievement.
 
+![Game over screen](assets/readme-files/images/game-over-ascii.jpg)
+
+![Game over screen lasagne option](assets/readme-files/images/game-over-lasagne-text.jpg)
+
+![Win screen](assets/readme-files/images/win-screen.jpg)
+
 Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path (function 'penny'). Conditional statement later in game to check if user has penny or not. Red and green text will also be utilised here. Inventory reset when game is reset.
+
+![Find penny](assets/readme-files/images/penny-one.jpg)
+
+![Penny success](assets/readme-files/images/penny-two.jpg)
+
+![Penny fail](assets/readme-files/images/penny-three.jpg)
 
 Increased number of lines in terminal - The number of rows in the terminal has been increased from 24 to 30; this is to allow some of the longer files, such as the intro, to display on the screen at the same time as the choices. Without these additional rows, the user would have to manually scroll up the page in order to see what they had missed.
 
+![Rows](assets/readme-files/images/rows.jpg)
+
 Alternate text - for some paths ('path_or_bridge', 'grab_or_send' and 'barehanded_or_ovenmitts') the text is different depending on which character the user chose at the beginning of the game. This is to enhance the user experience and provide more story variance, especially for users who have played many times.
+
+![Barbarian option](assets/readme-files/images/barbarian-text.jpg)
+
+![Rogue option](assets/readme-files/images/rogue-text.jpg)
+
+![Sorceror option](assets/readme-files/images/sorceror-text.jpg)
 
 Type 'r' to return to the beginning - require user input to return to the beginning of the game, allowing the user to fully read the current path before triggering a reset and printing the beginning text. Handles user errors such as uppercase 'R' or any other character.
 
+![Return trigger](assets/readme-files/images/return.jpg)
+
+![Return error](assets/readme-files/images/return-error.jpg)
+
 Background - The site background is dark green and the 'Run Program' button is pink, to mimick the colour of rhubarb. It is neutral so as not to detract from the game.
+
+![Background](assets/readme-files/images/bground.jpg)
 
 Cyan error messages - I have deliberately made my error messages cyan; the colour is eye-catching enough to draw the user's attention and communicate that an action needs to take place, without being alarming. It's not an urgent situation so there's no need to use the harsh red for an accidental user error. Screenshots in individual sections above.
 
