@@ -1,6 +1,6 @@
 import random
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 inventory = []
@@ -169,7 +169,7 @@ def reset_game():
     else:
         print(Fore.CYAN + Style.BRIGHT + "Error, please try again. The witch does not abide sloppy typing.")
         reset_game()
-    
+
     if "1 penny" in inventory:
         inventory.remove("1 penny")
 

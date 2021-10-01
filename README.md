@@ -70,30 +70,45 @@ Due to spending a week with limited internet, I ended up planning this project b
 
 
 [Story map/flow chart document]("../assets/readme-files/game-text.doc") also check this works
+
 [Story map/flow chart photo]("../assets/readme-files/") also check this works
 
 
 ### Features
 
+Introduction - welcome text in magenta to mirror the colour of rhubarb
+
+User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html). Includes error handler if no name is entered.
+
 Instructions - game explained clearly and efficiently, with header to distinguish it from the rest of the text on screen.
 
-Character choice - user given choice of 3 characters. Enough to make it interesting but not so many as to be overwhelming. Character choice is confirmed by printing same choice back to character.
+Character choice - user given choice of 3 characters. Enough to make it interesting but not so many as to be overwhelming. Character choice is confirmed by printing same choice back to character. Includes error handler.
 
-Text width - text does not extend the width of the page; during initial testing I discovered that it was easier to parse and pay attention to the text if it took up less width of the page. If it takes up the whole width the whole field is filled and the user is overloaded before having read anything. In a text-heavy game, I am keen to avoid this if I can.
+Text width - text does not extend the width of the page; during initial testing I discovered that it was easier to parse and pay attention to the text if it took up less width of the page. If it takes up the full width the whole field is filled and the user is overloaded before having read anything. In a text-heavy game, I am keen to avoid this if I can.
 
-Rolling - line break between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. yellow for rolling (in progress) and green for go
+Path choice - user given choice of path, which includes error handler.
 
-Final roll - final roll is shown to the player to indicate whether they have succeeded or failed.
+Rolling - line break between the player making a choice and the computer revealing the decision in order to build suspense and highlight that a ‘roll’ is being made. The text is coloured yellow to show that a roll is in progress, not yet red (fail) and not yet green (success).
 
-Increased number of lines in terminal - The number of rows in the terminal has been increased from 24 to 30; this is to allow some of the longer files to display on the screen at the same time as the choices. Without these additional rolls, the user would have to manually scroll up the page in order to see what they had missed.
+Final roll - final roll is shown to the player to indicate whether they have succeeded or failed. The success or fail message and the final roll number will be shown in red (fail) or green (success) to heighten the user's connection to the roll. These colours will hopefully elicit an emotional response that engages the player in the game.
+
+End screens - path endings have ascii art to differentiate them from path choice screens; 3 possible options as below. The win screen is especially important so as to give to user a sense of achievement.
+
+Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path (function 'penny'). Conditional statement later in game to check if user has penny or not. Inventory reset when game is reset.
+
+Increased number of lines in terminal - The number of rows in the terminal has been increased from 24 to 30; this is to allow some of the longer files, such as the intro, to display on the screen at the same time as the choices. Without these additional rows, the user would have to manually scroll up the page in order to see what they had missed.
+
+Alternate text - for some paths ('path_or_bridge', 'grab_or_send' and 'barehanded_or_ovenmitts') the text is different depending on which character the user chose at the beginning of the game. This is to enhance the user experience and provide more story variance, especially for users who have played many times.
 
 Type 'r' to return to the beginning - require user input to return to the beginning of the game, allowing the user to fully read the current path before triggering a reset and printing the beginning text. Handles user errors such as uppercase 'R' or any other character.
 
-Background - The site background invokes a deep dark forest, as most of the action takes place outside. It is neutral so as not to detract from the game.
+Background - The site background is dark green and the 'Run Program' button is pink, to mimick the colour of rhubarb. It is neutral so as not to detract from the game.
 
-Penny - inventory function for penny 'path' to add an extra aspect to the game; you can only 'find' the penny and add it to your inventory if you successfully go down that exact path. Conditional statement later in game to check if user has penny or not. Inventory reset when game is reset.
+Cyan error messages - I have deliberately made my error messages cyan; the colour is eye-catching enough to draw the user's attention and communicate that an action needs to take place, without being alarming. It's not an urgent situation so there's no need to use the harsh red for an accidental user error.
 
-User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html).
+
+
+
 
 ### Technologies
 Languages used:
@@ -109,9 +124,7 @@ Gitpod - for editing the files
 [TAAG](http://www.patorjk.com/software/taag/) - for the ASCII text
 [Colorama](https://pypi.org/project/colorama/) - for the coloured text
 
-
 ### Testing 
-
 
 Many of the people testing the game reported that they ended up at the 'tea' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both at the beginning at the game I don't want the players to get frustrated at dying too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
 
@@ -152,9 +165,13 @@ The live link is:
 
 ### Forking and Cloning
 To save a copy of the code and work on it yourself, here are the steps for forking and cloning using Github:
+
 In the repository, click the 'Fork' button, which is on the top right hand side, next to 'Star'.
+
 Github will automatically create a new repo, which is forked from the original. If you would like to clone it you have two options:
+
 Within the repository, click the 'Code' dropdown, which is located next to 'Add File' on the right (underneath the Settings tab); there is an option to download all files and save a copy locally.
+
 In the same 'Code' dropdown, you can opt to open the code with GitHub Desktop and work from there.
 
 ### Credits (content and media)
@@ -164,11 +181,9 @@ Research for information on Dungeons and Dragons character class information com
 
 All HTML, CSS and Javascript (except the minimal amount of CSS where marked) is created by Code Institute for the purpose of creating a functioning terminal environment within a webpage. Many thanks to CI for this!
 
-Background image comes from [Pexels](https://www.pexels.com/)
-
 All story text was written by myself.
 
-ASCII art text for 'Gave over' and 'You win' screens generated on [TAAG](http://www.patorjk.com/software/taag/).
+ASCII art text for 'Game over' and 'You win' screens generated on [TAAG](http://www.patorjk.com/software/taag/).
 
 Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family.
 
