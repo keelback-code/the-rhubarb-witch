@@ -202,6 +202,12 @@ Safari - &#9745;
 
 Microsoft Edge - &#9745;
 
+### Performance Testing
+
+Performance testing was conducted using [Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools). The results are:
+
+![Lighthouse results](assets/readme-files/images/lighthouse-results-rhubarb-witch.jpg)
+
 ### Debugging and known bugs
 
 Inventory - the inventory is a global object so that it can be accessed by all functions without being passed through every function (enough is being passed through, and it only needs to be actively used in 2 functions). When the game is reset the inventory also needs to be reset, so I have added code to the reset_game function that checks for the penny and removes it if it exists.
