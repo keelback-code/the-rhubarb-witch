@@ -64,7 +64,7 @@ It is possible, after the character stats have been taken into account, for the 
 
 Text is kept relatively short so as to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice.
 
-The colors are all set to 'bright' as the standard Python colours are a little dim in the HTML terminal.
+The colors are all set to 'bright' as the standard Python colours are a little dim in the HTML terminal. I have used Colorama for my text rather than ANSI as it is more graceful and makes the code easier to parse. Colour communicates a lot to the user so it is a very important element of the project, as further explained in the Features section.
 
 ### Story map and flow chart
 
@@ -186,7 +186,7 @@ Gitpod - for editing the files
 
 ### Testing 
 
-Many of the people testing the game reported that they ended up at the 'tea' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both towards the beginning at the game I don't want the players to get frustrated at dying/ending too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
+### Code Validation
 
 ### Browser Compatibility
 
@@ -209,6 +209,14 @@ Performance testing was conducted using [Lighthouse](https://developers.google.c
 ![Lighthouse results](assets/readme-files/images/lighthouse-results-rhubarb-witch.jpg)
 
 ### Manual Testing
+
+I sent the live link to friends and family members for testing and feedback. The site was received positively; design and usability suggestions were considered and acted on. The site was also put up in the Code Institute Slack community for feedback.
+
+Many of the people testing the game reported that they ended up at the 'tea/lasagne' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both towards the beginning at the game I don't want the players to get frustrated at dying/ending too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
+
+I conducted manual testing and recorded the results as follows:
+
+![Manual testing](assets/readme-files/images/manual-testing-rhubarb-witch.jpg)
 
 ### User Stories Testing
 
