@@ -71,9 +71,10 @@ The colors are all set to 'bright' as the standard Python colours are a little d
 Due to spending a week with limited internet, I ended up planning this project before starting the Love Sandwiches walkthrough and learning what a flow chart is. When writing out the story and the paths of the story I ended up with an accidental flow chart but it is in the format of a word document, which can be found below, along with photos of the handwritten version.
 
 
-[Story map/flow chart document]("assets/readme-files/documents/game-text.doc") also check this works
+[Story map/flow chart document](assets/readme-files/documents/game-text.doc) also check this works
 
-[Story map/flow chart photo]("assets/readme-files/tbc") also check this works
+Original document
+![Story map/flow chart photo](assets/readme-files/images/flow-chart.jpg)
 
 
 ### Features
@@ -187,6 +188,14 @@ Gitpod - for editing the files
 ### Testing 
 
 ### Code Validation
+
+[Python validator](http://pep8online.com/) - 14 errors, all code E501 line too long. Each checked and all would break functionality if lines are shortened. All efforts were made to reduce the number of E501s, including altering variable names, dividing print statements and shortening file names.
+
+[Javascript validator](https://jshint.com/) - passes with no errors and 1 warning (code written by the Code Institute)
+
+[HTML validator](https://validator.w3.org/) - passes with no errors or warnings (code written by the Code Institute)
+
+[CSS validator](https://jigsaw.w3.org/css-validator/) - passes with no errors or warnings (code written by the Code Institute except where marked)
 
 ### Browser Compatibility
 

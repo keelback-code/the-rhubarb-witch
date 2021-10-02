@@ -406,13 +406,13 @@ def barehanded_or_ovenmitts(character):
     """
     if character == "Barbarian":
         stats = Barbarian(5, -1)
-        read_file("./assets/story-files/barehanded-or-ovenmitts-barbarian-attack.txt")
+        read_file("./assets/story-files/barehanded-or-ovenmitts-barbarian.txt")
     elif character == "Rogue":
         stats = Rogue(-3, 4)
-        read_file("./assets/story-files/barehanded-or-ovenmitts-rogue-attack.txt")
+        read_file("./assets/story-files/barehanded-or-ovenmitts-rogue.txt")
     else:
         stats = Sorcerer(-4, 5)
-        read_file("./assets/story-files/barehanded-or-ovenmitts-sorcerer-attack.txt")
+        read_file("./assets/story-files/barehanded-or-ovenmitts-sorcerer.txt")
 
     current_path = barehanded_or_ovenmitts
     first_path = barehanded
