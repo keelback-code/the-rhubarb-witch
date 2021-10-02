@@ -208,6 +208,52 @@ Performance testing was conducted using [Lighthouse](https://developers.google.c
 
 ![Lighthouse results](assets/readme-files/images/lighthouse-results-rhubarb-witch.jpg)
 
+### Manual Testing
+
+### User Stories Testing
+
+A first time user looking to play the game:
+
+*I want to be able to choose a character*
+
+* Multiple character selection at the beginning of the game, with character descriptions and alternate text on some paths.
+
+*I want the instructions to be clear*
+
+* Instructions at the beginning of the game, marked with a heading. Prompts throughout the game and user feedback provided with writing and colours (character choice printed back in magenta, roll printed clearly with a positive or negative colour).
+
+*I want the game to be engaging*
+
+* Involve the user from the beginning by giving them a fantastical, in-universe name, then provide interactivity with path choice and the random element of the roll. Reward the user with ASCII art at end screens, which differentiates them from the rest of the game. Continue the energy of the game to the error messages so as not to break focus.
+
+A returning user looking to play the game again:
+
+*I want to be able to play the game multiple times without the same ending/path*
+
+* Multiple paths and endings, with the added random element of the roll meaning you will explore paths you may not have intended to. Multiple characters and multiple text options for those characters also provides extended playability.
+
+*I want to be able to choose a different character*
+
+* When the game is reset, the character options and descriptions are presented again.
+
+As the owner of the site:
+
+*I want users to be able to use the game easily and intuitively*
+
+* Clear instructions and user feedback provided.
+
+*I want the game to be engaging*
+
+* Multiple interactive elements: user name generator, character selection and path selection. The random element of the roll provides extra playability as users try to explore paths they were previously unable to. The character selection causes some users to think about each path choice and try to guess which one would give them the best chance of success, providing more playability.
+
+*I want errors to be handled efficiently*
+
+* Error handlers for each possible error, each keeping in theme with the game and communicating to the user what needs to happen next.
+
+*I want what is going on to be clear to the users at all times*
+
+* User feedback regularly provided, through clear text and use of coloured text.
+
 ### Debugging and known bugs
 
 Inventory - the inventory is a global object so that it can be accessed by all functions without being passed through every function (enough is being passed through, and it only needs to be actively used in 2 functions). When the game is reset the inventory also needs to be reset, so I have added code to the reset_game function that checks for the penny and removes it if it exists.
@@ -266,7 +312,7 @@ All story text was written by myself.
 
 ASCII art text for 'Game over' and 'You win' screens generated on [TAAG](http://www.patorjk.com/software/taag/).
 
-Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family.
+Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family. The main difference between the Javascript version and this one is that in the Javascript one the names exist as a global object declared at the beginning of the program. Here I decided to neaten up the program and save the names in a .txt file which the functions reads and processes.
 
 ### Acknowledgements
 
