@@ -56,7 +56,7 @@ Inspiration for this game is taken from shows such as [Dimenson 20](https://www.
 
 In D&D, almost every action is accompanied by a roll of a dice, usually one with twenty sides known as a D20. There are many variables as to the success or fail of your action, not just the roll but the stats of your character, special moves and so on. This is too intricate and complicated for this short, simple game so I have pre-determined the player’s stats for each action/path based on the character classes. That information can be found [here] and is in the form of a simple + or - for each divergent path. The stats are based on the characteristics of each character; for example a barbarian would be likely to make a bold move so that would be a positive number, but a subtle or stealthy move would be negative for a barbarian, but positive for a rogue.
 The pre-determined statistics can be found here:
-[Stats document]("../assets/readme-files/stats.doc") check this works
+[Stats document]("assets/readme-files/documents/stats.doc") check this works
 
 At each path the program will roll a number between 1 and 20 and the stat will be added or taken away from the number. If it is 1-10 inclusive the move fails and the player will be sent down the opposite path, 11-20 inclusive then the move succeeds. This will hopefully make the game more dynamic than a standard choose your own adventure and allow the player to have multiple playthroughs without the same path each time.
 
@@ -71,9 +71,9 @@ The colors are all set to 'bright' as the standard Python colours are a little d
 Due to spending a week with limited internet, I ended up planning this project before starting the Love Sandwiches walkthrough and learning what a flow chart is. When writing out the story and the paths of the story I ended up with an accidental flow chart but it is in the format of a word document, which can be found below, along with photos of the handwritten version.
 
 
-[Story map/flow chart document]("../assets/readme-files/game-text.doc") also check this works
+[Story map/flow chart document]("assets/readme-files/documents/game-text.doc") also check this works
 
-[Story map/flow chart photo]("../assets/readme-files/") also check this works
+[Story map/flow chart photo]("assets/readme-files/tbc") also check this works
 
 
 ### Features
@@ -120,7 +120,7 @@ Final roll - final roll is shown to the player to indicate whether they have suc
 
 ![Final roll fail](assets/readme-files/images/final-roll-fail.jpg)
 
-End screens - path endings have ascii art to differentiate them from path choice screens; 3 possible options as below. The win screen is especially important so as to give to user a sense of achievement.
+End screens - path endings have ASCII art to differentiate them from path choice screens; 3 possible options as below. The win screen is especially important so as to give to user a sense of achievement.
 
 ![Game over screen](assets/readme-files/images/game-over-ascii.jpg)
 
@@ -188,6 +188,19 @@ Gitpod - for editing the files
 
 Many of the people testing the game reported that they ended up at the 'tea' end quite often. While building the game I noticed the same for the 'elf' ending. As these are both towards the beginning at the game I don't want the players to get frustrated at dying/ending too soon, so I stacked the odds for both of these paths in favour of the path that furthers the game. It's not guaranteed to get the other path so the random element is not removed, but rather helped a little to improve the user experience.
 
+### Browser Compatibility
+
+Browser Compatibility checks were run using [BrowserStack](https://www.browserstack.com/) and my own computer. The results are:
+
+Firefox - &#9745;
+
+Chrome - &#9745;
+
+Opera - &#9745;
+
+Safari - &#9745;
+
+Microsoft Edge - &#9745;
 
 ### Debugging and known bugs
 
