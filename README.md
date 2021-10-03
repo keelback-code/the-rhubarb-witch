@@ -48,7 +48,7 @@ As the owner of the site:
 * I want users to be able to use the game easily and intuitively
 * I want the game to be engaging
 * I want errors to be handled efficiently
-* I want what is going on to be clear to the users at all times
+* I want what is happening to be clear to the users at all times
 
 ### Design and UX
 
@@ -61,11 +61,11 @@ The pre-determined statistics can be found here:
 
 At each path the program will roll a number between 1 and 20 and the stat will be added or taken away from the number. If it is 1-10 inclusive the move fails and the player will be sent down the opposite path, 11-20 inclusive then the move succeeds. This will hopefully make the game more dynamic than a standard choose your own adventure and allow the player to have multiple playthroughs without the same path each time.
 
-It is possible, after the character stats have been taken into account, for the final roll to be below 1 or above 20. This is the same case in D&D so I have left it in. It makes the success sweeter or makes the failure feel harsher.
+It is possible, after the character stats have been taken into account, for the final roll to be below 1 or above 20. This is the same case in D&D so I have incorporated it. It makes the success sweeter or makes the failure feel harsher.
 
 Text is kept relatively short to keep the user engaged. The game never goes more than a few sentences (usually 2 or 3) before introducing a choice.
 
-The colors are all set to 'bright' as the standard Python colours are a little dim in the HTML terminal. I have used Colorama for my text rather than ANSI as it is more graceful and makes the code easier to parse. Colour communicates a lot to the user so it is a very important element of the project, as further explained in the Features section.
+The colours are all set to 'bright' as the standard Python colours are a little dim in the HTML terminal. I have used Colorama for my text rather than ANSI as it is more graceful and makes the code easier to parse. Colour communicates a lot to the user so it is a very important element of the project, as further explained in the Features section.
 
 ### Story map and flow chart
 
@@ -275,7 +275,7 @@ As the owner of the site:
 
 Inventory - the inventory is a global object so that it can be accessed by all functions without being passed through every function (enough is being passed through, and it only needs to be actively used in 2 functions). When the game is reset the inventory also needs to be reset, so I have added code to the reset_game function that checks for the penny and removes it if it exists.
 I tested initialising the function in main() or early game functions but it did not work without passing it through all the functions. The above seemed to be the simplest solution.
-Originally I was trying to pass the penny through to the check_inn function as a value, which wouldn't work without being passed to more functions as mentioned, but eventually realised that I was trying to make things too complicated and it is an object just like real life, that needs to be kept in a 'bag', in this case a list, that I can take it in and out of when needed.
+Originally I was trying to pass the penny through to the check_inn function as a value, which wouldn't work without being passed to more functions as mentioned, but eventually realised that I was trying to make things too complicated. It is an object just like real life, that needs to be kept in a 'bag', in this case a list, that I can take it in and out of when needed.
 
 In the path functions (path_or_bridge, dangerous_or_tea etc) almost all of the game functionality is tied up in neat functions. The only thing that I could not tie up was the stats, which creates a class instance and uses that to assign the stat for the appropriate character class and path. After much work on my own and discussing this problem with my mentor, it looked like the only way around this was to refactor the whole game, placing all the paths within classes. After experimentation and consideration I decided this would probably be a similar amount of code and complexity to my current approach, and kept what I currently have.
 
@@ -330,7 +330,7 @@ All story text was written by myself.
 
 ASCII art text for 'Game over' and 'You win' screens generated on [TAAG](http://www.patorjk.com/software/taag/).
 
-Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family. The main difference between the Javascript version and this one is that in the Javascript one the names exist as a global object declared at the beginning of the program. Here I decided to neaten up the program and save the names in a .txt file which the functions reads and processes.
+Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family. The main difference between the Javascript version and this one is that in the Javascript one the names exist as a global object declared at the beginning of the program. Here I decided to neaten up the program and save the names in a .txt file which the function reads and processes.
 
 ### Acknowledgements
 

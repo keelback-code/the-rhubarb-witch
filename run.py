@@ -81,8 +81,8 @@ def user_name():
         user_name()
     else:
         user_last_name = random.choice(game_names_list)
-        user_final_name = user + " " + user_last_name
-        print(f"Welcome {user}! Your new name is {user_final_name}. Let's play.\n")
+        final_name = user + " " + user_last_name
+        print(Fore.MAGENTA + Style.BRIGHT + f"Welcome {user}! Your new name is {final_name}. Let's play.\n")
 
 
 def read_file(current_story_file):
