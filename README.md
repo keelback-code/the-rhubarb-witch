@@ -33,6 +33,9 @@ The Rhubarb Witch is a text-based choose your own adventure game with Dungeons a
 Live link:
 [The Rhubarb Witch](https://the-rhubarb-witch.herokuapp.com/)
 
+Screenshot:
+![Screenshot](assets/readme-files/images/ami-responsive-screenshot.jpg)
+
 ### User Stories
 
 A first time user looking to play the game:
