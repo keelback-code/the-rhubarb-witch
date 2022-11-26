@@ -31,7 +31,7 @@
 The Rhubarb Witch is a text-based choose your own adventure game with Dungeons and Dragons mechanics. At the beginning of the game, you choose a character class: Barbarian, Rogue or Sorcerer. At each fork in the path the program will roll a ‘dice’ which will determine whether you succeed or fail in taking that action. The class you chose affects the outcome of the dice roll, which will be further explained in the Design section of the Readme.
 
 Live link:
-[The Rhubarb Witch](https://the-rhubarb-witch.herokuapp.com/)
+[The Rhubarb Witch](https://the-rhubarb-witch.onrender.com)
 
 Screenshot:
 ![Screenshot](assets/readme-files/images/ami-responsive-screenshot.jpg)
@@ -86,7 +86,7 @@ Introduction - welcome text in magenta to mirror the colour of rhubarb.
 
 ![Welcome text](assets/readme-files/images/welcome-text.jpg)
 
-User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html). This is the first time the user is asked for input so I have included instructions to 'hit enter' as it is not immediately obvious to every player. It also sets the player up to do the same for each following input without further instruction. Includes error handler if no name is entered.
+User name - user is given a themed name at the beginning of the game. Names and code are adapted from my previous Javascript project [Wizard Name Generator](https://keelback-code.github.io/wizard-name-generator/index.html). This is the first time the user is asked for input so I have included instructions to 'hit enter' as it is not immediately obvious to every player. It also sets the player up to do the same for each following input without further instruction. Includes error handler if no name is entered.
 
 ![User name one](assets/readme-files/images/user-name-one.jpg)
 
@@ -307,7 +307,7 @@ After the first push/update, your app will be ready to go!
 For the Colorama library, the requirements.txt file needs to have colorama==0.4.4 saved. Before the next push, enter 'pip3 freeze > requirements.txt'. If you add any libraries please make sure to add the requirements to the requirements.txt file and enter this command again, along with any config vars if you need them. Colorama does not need any config vars.
 
 The live link is:
-[The Rhubarb Witch](https://the-rhubarb-witch.herokuapp.com/)
+[The Rhubarb Witch](https://the-rhubarb-witch.onrender.com/)
 
 ### Forking and Cloning
  
@@ -333,7 +333,7 @@ All story text was written by myself.
 
 ASCII art text for 'Game over' and 'You win' screens generated on [TAAG](http://www.patorjk.com/software/taag/).
 
-Generated user names from [Wizard Name Generator](https://elyserh.github.io/wizard-name-generator/index.html); primarily provided by friends and family. The main difference between the Javascript version and this one is that in the Javascript one the names exist as a global object declared at the beginning of the program. Here I decided to neaten up the program and save the names in a .txt file which the function reads and processes.
+Generated user names from [Wizard Name Generator](https://keelback-code.github.io/wizard-name-generator/index.html); primarily provided by friends and family. The main difference between the Javascript version and this one is that in the Javascript one the names exist as a global object declared at the beginning of the program. Here I decided to neaten up the program and save the names in a .txt file which the function reads and processes.
 
 ### Acknowledgements
 
